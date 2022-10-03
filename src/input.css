@@ -1,0 +1,80 @@
+/*Omaa CSS koodia*/
+.customhr {
+  border: 0.5px solid #71d8f5;
+  margin: 0.1rem 1.25rem 0.8rem 0;
+}
+
+.littleWave {
+  height: 50px;
+}
+
+.footerhr {
+  width: 97%;
+  border: 0.5px solid white;
+  opacity: 0.5;
+  margin: 0.5rem;
+}
+
+.clipPath {
+  clip-path: polygon(0 40%, 100% 36%, 100% 100%, 0 97%);
+}
+
+/*Omaa CSS*/
+
+#msg-input {
+  display: none;
+}
+
+#leaveBtn {
+  display: none;
+}
+
+#roomDiv {
+  display: none;
+}
+
+hr {
+  border: 0.5px solid #71d8f5;
+  margin: 0.5rem 1.25rem 0.8rem 0;
+}
+
+@media (min-width: 768px) {
+  .bannerHeight {
+    height: 29rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .desktopLive {
+    top: 27rem;
+    right: 5rem;
+    padding: 25px !important;
+    font-size: 1.5em !important;
+    /* box-shadow: rgba(255, 255, 255, 0.25) 0px 54px 55px,
+      rgba(255, 255, 255, 0.12) 0px -12px 30px,
+      rgba(255, 255, 255, 0.12) 0px 4px 6px,
+      rgba(255, 255, 255, 0.17) 0px 12px 13px,
+      rgba(255, 255, 255, 0.09) 0px -3px 5px; */
+    border-radius: 20px !important;
+  }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h2 {
+    @apply text-lg font-semibold text-mm-fiery-rose;
+  }
+}
+
+@layer components {
+  .btn-yellow {
+    @apply bg-mm-key-lime hover:bg-mm-fiery-rose hover:text-mm-key-lime text-mm-fiery-rose font-bold py-2 px-4 cursor-pointer rounded-md;
+  }
+
+  .infoBox {
+    @apply m-3 p-5 bg-white/80 rounded-md;
+  }
+}

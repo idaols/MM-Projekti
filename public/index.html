@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/socket.io/socket.io.js"></script>
+    <script defer src="chat.js"></script>
+    <link href="../dist/output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css"
+    />
+    <link href="https://vjs.zencdn.net/7.20.2/video-js.css" rel="stylesheet" />
+    <!-- Fantasy -->
+    <link
+      href="https://unpkg.com/@videojs/themes@1/dist/fantasy/index.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="video.css" />
+    <title>Mahdollisuuksien maisemia</title>
+  </head>
+
+  <body class="bg-white h-full">
+    <div class="absolute z-40 pt-4 pl-1">
+      <img class="h-36" src="../dist/img/logo.svg" alt="logo" />
+    </div>
+
+    <nav class="bg-nav-bg bg-no-repeat px-2 sm:px-4 py-2.5">
+      <div
+        class="container flex flex-wrap justify-end items-center mx-auto mt-10"
+      >
+        <button
+          data-collapse-toggle="navbar-default"
+          class="inline-flex items-center p-2 ml-3 mt-3 mb-2 text-sm text-mm-fiery-rose bg-mm-key-lime rounded-lg md:hidden hover:bg-mm-fiery-rose hover:text-mm-key-lime"
+          aria-controls="navbar-default"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Open main menu</span>
+          <svg
+            class="w-6 h-6"
+            aria-hidden="true"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+        <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+          <ul
+            class="flex flex-col p-4 mt-4 bg-white rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium"
+          >
+            <li>
+              <a
+                href="#"
+                class="float-right block py-2 pr-4 pl-3 mt-2 text-mm-white bg-mm-fiery-rose rounded md:bg-transparent md:text-mm-fiery-rose md:p-0"
+                aria-current="page"
+                >Etusivu</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="float-right block py-2 pr-4 pl-3 mt-2 text-mm-dark-sienna rounded hover:bg-mm-pale-pink md:hover:bg-transparent md:border-0 md:hover:text-mm-fiery-rose md:p-0"
+                >Ajankohtaista</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="float-right block py-2 pr-4 pl-3 mt-2 text-mm-dark-sienna rounded hover:bg-mm-pale-pink md:hover:bg-transparent md:border-0 md:hover:text-mm-fiery-rose md:p-0"
+                >Ohjelma</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="float-right block py-2 pr-4 pl-3 mt-2 text-mm-dark-sienna rounded hover:bg-mm-pale-pink md:hover:bg-transparent md:border-0 md:hover:text-mm-fiery-rose md:p-0"
+                >Yhteystiedot</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="mt-1.5 relative testi2">
+      <img class="z-10 object-cover md:object-left w-screen bannerHeight" src="../dist/img/banner2.jpg" alt="banneri" />
+      <div class="z-20 absolute bottom-0 bg-little-wave bg-no-repeat w-screen littleWave"></div>
+    </div>
+
+
+    <div class="bg-bg-image bg-no-repeat bg-cover bg-center">
+
+      <div
+        class="bg-mm-sky-blue-crayola p-4 flex justify-center items-center flex-col lg:flex-row lg:h-36 lg:px-10"
+      >
+
+        <h3 class="text-xl font-semibold text-white text-center lg:text-2xl">
+          Luovuus sinun työssäsi? <br> Mitä luovuus työelämässä mahdollistaa?
+        </h3>
+        <button class="btn-yellow w-fit mt-3 lg:absolute desktopLive uppercase" data-modal-toggle="defaultModal">
+          Live stream
+        </button>
+        <!-- <div class="btn-yellow w-fit mt-3">Live stream</div> -->
+      </div>
+      <div class="flex justify-center flex-col lg:flex-row lg:py-5 z-1">
+        <div class="infoBox basis-1/3">
+          <h2 class="font-semibold">Mikä tapahtuma?</h2>
+          <hr class="customhr" />
+          <p>
+            Miten luovuuden mahdollisuuksia huomioiva näkökulma työelämässä eri
+            aloilla ja ammateissa otetaan käyttöön? Miten luovuuden huomiointi
+            edistää kestävää, hyvää työelämää ja tulevaisuutta?
+            <br />
+            <br />
+            Moniäänisessä tapahtumassa kuullaan sekä huippututkijoiden
+            puheenvuoroja että käydään eri alojen ammattilaisten ja
+            opiskelijoiden yhteistä keskustelua luovuuden mahdollisuuksista
+            työelämässä.
+          </p>
+        </div>
+        <div class="infoBox basis-1/3">
+          <h2 class="font-semibold">Missä ja milloin?</h2>
+          <hr class="customhr" />
+          <p>
+            Metropolia Ammattikorkeakoulun Myllypuron kampuksella (Helsinki)
+            <br />
+            <br />
+            keskiviikkona 5.10.2022 klo 8.00-15.00
+            <br />
+            <br />
+            Tapahtuma on maksuton, mutta edellyttää sitovaa
+            ennakkoilmoittautumista.
+          </p>
+        </div>
+        <div class="infoBox basis-1/3">
+          <h2 class="font-semibold">Ohjelma ja kenelle?</h2>
+          <hr class="customhr" />
+          <p>
+            Tutustu tapahtuman ohjelmaan.
+            <br />
+            <br />
+            Tapahtuma on tarkoitettu eri alojen ammateissa toimiville
+            ammattilaisille, asiantuntijoille, yrittäjille ja opiskelijoille.
+            Luovuus tuo mahdollisuuksia kaikilla aloilla!
+            <br />
+            <br />
+            Tapahtumaan on rajoitettu määrä paikkoja, ilmoittaudu ajoissa.
+          </p>
+        </div>
+      </div>
+
+      <!-- Main modal -->
+      <div
+        id="defaultModal"
+        tabindex="-1"
+        aria-hidden="true"
+        class="hidden overflow-y-auto overflow-x-hidden h-screen fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center"
+      >
+        <div class="relative p-2 w-full max-w-2xl h-full md:h-auto">
+          <!-- Modal content -->
+          <div class="relative bg-white rounded-lg shadow">
+            <!-- Modal header -->
+            <div
+              class="flex justify-between items-start p-4 rounded-t border-b"
+            >
+              <h3 class="text-xl font-semibold text-mm-fiery-rose">
+                Live stream
+              </h3>
+              <button
+                class="text-mm-fiery-rose bg-mm-key-lime hover:bg-mm-fiery-rose hover:text-mm-key-lime rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
+                data-modal-toggle="defaultModal"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                <span class="sr-only">Close modal</span>
+              </button>
+            </div>
+            <!-- Modal body -->
+            <div class="pt-4">
+              <div class="px-2 pb-2">
+                <video id="my-video" class="video-js vjs-theme-fantasy vjs-ida">
+                  <source src="/dist/img/video.mp4" type="video/mp4" />
+                  <!-- <source
+                    src="http://195.148.104.124:1935/jakelu/tailwind/playlist.m3u8"
+                    type="application/x-mpegURL"
+                  /> -->
+                  <p class="vjs-no-js">
+                    To view this video please enable JavaScript, and consider
+                    upgrading to a web browser that
+                    <a
+                      href="https://videojs.com/html5-video-support/"
+                      target="_blank"
+                      >supports HTML5 video</a
+                    >
+                  </p>
+                </video>
+                
+              </div>
+              <hr style="margin: 8px;">
+              <div class="top-0 pb-12 px-2 flex justify-center rounded-bl-lg rounded-br-lg">
+
+                <div
+                  class="bg-white/95 pt-1 pb-5 px-5 border-solid rounded-md w-full max-h-72 flex justify-center"
+                > 
+                  <form
+                    class="w-full flex justify-center content-center flex-col"
+                    id="join"
+                  >
+                    <h1 class="text-xl font-bold text-mm-fiery-rose mb-1">
+                      Chat
+                    </h1>
+                    <p class="mt-3 text-md">Valitse huone:</p>
+                    <div class="mb-3 p-2 text-sm">
+                      <input type="radio" id="1" name="room" value="1" />
+                      <label class="pr-3" for="1">Huone 1</label>
+                      <input type="radio" id="2" name="room" value="2" />
+                      <label class="pr-3" for="2">Huone 2</label>
+                      <input type="radio" id="3" name="room" value="3" />
+                      <label class="pr-3" for="3">Huone 3</label>
+                    </div>
+                    <div class="flex flex-wrap content-center justify-start text-sm">
+                      <input
+                        class="border border-mm-sky-blue-crayola p-2 rounded-lg w-fit focus:outline-mm-fiery-rose"
+                        type="text"
+                        id="username"
+                        placeholder="Valitse käyttäjänimi"
+                      />
+                      <button class="btn-yellow ml-2">Liity</button>
+                    </div>
+                  </form>
+                  <div id="roomDiv" class="w-full flex justify-center">
+                    <div class="flex flex-row justify-between">
+                      <div class="flex-col">
+                        <h1
+                          id="roomNumber"
+                          class="text-lg font-bold text-mm-dark-sienna"
+                        ></h1>
+                        <p class="text-sm">Aloita chattailu!</p>
+                      </div>
+                      <button class="btn-yellow px-2 py-1 text-xs" id="leaveBtn">Poistu</button>
+                    </div>
+                    <form id="msg-input" class="pt-5 pb-3">
+                      <div
+                        class="flex items-center py-2 px-3 bg-mm-fiery-rose rounded-md"
+                      >
+                        <button
+                          type="button"
+                          class="inline-flex justify-center p-2 text-mm-key-lime rounded-full cursor-pointer hover:text-mm-fiery-rose hover:bg-mm-key-lime"
+                        >
+                          <svg
+                            class="w-6 h-6"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
+                              clip-rule="evenodd"
+                            ></path>
+                          </svg>
+                        </button>
+                        <button
+                          type="button"
+                          class="p-2 text-mm-key-lime rounded-full cursor-pointer hover:text-mm-fiery-rose hover:bg-mm-key-lime"
+                        >
+                          <svg
+                            class="w-6 h-6"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-.464 5.535a1 1 0 10-1.415-1.414 3 3 0 01-4.242 0 1 1 0 00-1.415 1.414 5 5 0 007.072 0z"
+                              clip-rule="evenodd"
+                            ></path>
+                          </svg>
+                        </button>
+                        <textarea
+                          id="message"
+                          rows="1"
+                          class="block mx-4 p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:outline-mm-fiery-rose"
+                          placeholder="Lähetä viesti..."
+                        ></textarea>
+                        <button
+                          type="submit"
+                          class="inline-flex justify-center p-2 text-mm-key-lime rounded-full cursor-pointer hover:text-mm-fiery-rose hover:bg-mm-key-lime"
+                        >
+                          <svg
+                            class="w-6 h-6 rotate-90"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"
+                            ></path>
+                          </svg>
+                        </button>
+                      </div>
+                    </form>
+                    <!-- <form id="msg-input">
+                      <input type="text" id="message" placeholder="kirjoita viesti..." />
+                      <button type="submit">Lähetä</button>
+                    </form> -->
+                    <div class="flex flex-col-reverse overflow-auto max-h-40">
+                    <ul class="" id="messages"></ul>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div
+      class="bg-mm-fiery-rose p-1 h-28 flex justify-center items-center flex-col text-white"
+    >
+      <hr class="footerhr" />
+      <h3 class="font-bold pt-1">Metropolia Ammattikorkeakoulu</h3>
+      <p class="font-semibold text-xs">#mahdollisuuksienmaisemia</p>
+      <p class="font-thin text-xs">Ida Olsson Vilhunen</p>
+    </div>
+
+    <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+    <script src="https://vjs.zencdn.net/7.20.2/video.min.js"></script>
+
+    <script>
+      let myPlayer = document.querySelector(".video-js");
+
+      console.log(myPlayer);
+
+      videojs(myPlayer, {
+        controls: true,
+        loop: true,
+        autoplay: false,
+        preload: "auto",
+        fluid: true,
+        poster: "../dist/img/placeholder.jpg",
+        aspectRatio: "16:9",
+      });
+    </script>
+  </body>
+</html>
