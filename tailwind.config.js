@@ -11,13 +11,11 @@ module.exports = {
     },
     extend: {
       colors: {
-        "mm-pale-pink": "#fde4e8ff",
-        "mm-key-lime": "#ecf877ff",
-        "mm-fiery-rose": "#fe586fff",
-        "mm-dark-sienna": "#2d0001ff",
-        "mm-sky-blue-crayola": "#71d8f5ff",
-        "mm-baby-powder": "#f7f7f2ff",
-        "mm-white": "rgb(255,255,255)",
+        "mm-black": "#000000ff",
+        "mm-blue": "#385368ff",
+        "mm-orange": "#FE8A3Bff",
+        "mm-peachy": "#FED7B5ff",
+        "mm-white": "#FFFFFFff",
       },
       backgroundImage: {
         "bg-image": "url('/img/wave-bg.svg')",

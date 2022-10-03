@@ -1,6 +1,6 @@
 /*Omaa CSS koodia*/
 .customhr {
-  border: 0.5px solid #71d8f5;
+  border: 0.5px solid #fed7b5;
   margin: 0.1rem 1.25rem 0.8rem 0;
 }
 
@@ -38,9 +38,13 @@ hr {
   margin: 0.5rem 1.25rem 0.8rem 0;
 }
 
+.glowBorder {
+  box-shadow: 0 0 10px 1px #fe8a3b;
+}
+
 @media (min-width: 768px) {
   .bannerHeight {
-    height: 29rem;
+    height: 37rem;
   }
 }
 
@@ -65,16 +69,16 @@ hr {
 
 @layer base {
   h2 {
-    @apply text-lg font-semibold text-mm-fiery-rose;
+    @apply text-lg font-semibold text-mm-orange;
   }
 }
 
 @layer components {
   .btn-yellow {
-    @apply bg-mm-key-lime hover:bg-mm-fiery-rose hover:text-mm-key-lime text-mm-fiery-rose font-bold py-2 px-4 cursor-pointer rounded-md;
+    @apply bg-mm-orange text-mm-white font-bold py-2 px-4 cursor-pointer rounded-md;
   }
 
   .infoBox {
-    @apply m-3 p-5 bg-white/80 rounded-md;
+    @apply m-3 p-5 bg-mm-blue/30 rounded-md text-mm-white;
   }
 }
