@@ -18,9 +18,7 @@ module.exports = {
         "mm-white": "#FFFFFFff",
       },
       backgroundImage: {
-        "bg-image": "url('/img/wave-bg.svg')",
-        "nav-bg": "url('/img/nav-bg4.svg')",
-        "little-wave": "url('/img/littlewave.svg')",
+        "bg-nav": "url('/img/mm-nav.jpg')",
       },
     },
   },

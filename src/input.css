@@ -4,22 +4,12 @@
   margin: 0.1rem 1.25rem 0.8rem 0;
 }
 
-.littleWave {
-  height: 50px;
-}
-
 .footerhr {
   width: 97%;
   border: 0.5px solid white;
   opacity: 0.5;
   margin: 0.5rem;
 }
-
-.clipPath {
-  clip-path: polygon(0 40%, 100% 36%, 100% 100%, 0 97%);
-}
-
-/*Omaa CSS*/
 
 #msg-input {
   display: none;
