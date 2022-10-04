@@ -28,19 +28,6 @@ hr {
   margin: 0.5rem 1.25rem 0.8rem 0;
 }
 
-@media (max-width: 768px) {
-  .bannerHeight {
-    height: 29rem;
-  }
-  .desktopLive2 {
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    text-align: center;
-    top: 57px;
-  }
 .glowBorder {
   box-shadow: 0 0 10px 1px #fe8a3b;
 }
@@ -49,28 +36,12 @@ hr {
   .bannerHeight {
     height: 37rem;
   }
-  .desktopLive2 {
-    position: absolute;
-    right: 43px;
-  }
 }
 
 @media (min-width: 1024px) {
   .desktopLive {
     top: 27rem;
     right: 5rem;
-    padding: 25px !important;
-    font-size: 1.5em !important;
-    /* box-shadow: rgba(255, 255, 255, 0.25) 0px 54px 55px,
-      rgba(255, 255, 255, 0.12) 0px -12px 30px,
-      rgba(255, 255, 255, 0.12) 0px 4px 6px,
-      rgba(255, 255, 255, 0.17) 0px 12px 13px,
-      rgba(255, 255, 255, 0.09) 0px -3px 5px; */
-    border-radius: 20px !important;
-  }
-  .desktopLive2 {
-    top: 9rem;
-    right: 2rem;
     padding: 25px !important;
     font-size: 1.5em !important;
     /* box-shadow: rgba(255, 255, 255, 0.25) 0px 54px 55px,
@@ -98,10 +69,6 @@ hr {
   }
 
   .infoBox {
-<<<<<<< HEAD
-    @apply mx-10 m-3 p-5 bg-white/80 rounded-md;
-=======
     @apply m-3 p-5 bg-mm-blue/30 rounded-md text-mm-white;
->>>>>>> 2428e564706774f9d0029d2624c3b1dbae2ba49a
   }
 }
