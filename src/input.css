@@ -11,6 +11,11 @@
   margin: 0.5rem;
 }
 
+.footerCustom {
+  position: absolute;
+  right: 30px;
+}
+
 #msg-input {
   display: none;
 }
