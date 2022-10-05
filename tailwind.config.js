@@ -20,6 +20,10 @@ module.exports = {
       backgroundImage: {
         "bg-nav": "url('/img/mm-nav.jpg')",
       },
+      fontFamily: {
+        "gemunu-libre": ["'Gemunu Libre', sans-serif"],
+        lato: ["'Lato', sans-serif"],
+      },
     },
   },
   plugins: [],
