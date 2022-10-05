@@ -50,7 +50,7 @@ hr {
 }
 
 .active.fade-bottom {
-  animation: fade-bottom 0.8s ease;
+  animation: fade-bottom 1s ease;
 }
 .active.fade-left {
   animation: fade-left 1s ease;
@@ -91,9 +91,51 @@ hr {
   }
 }
 
+/* DEMO-SPECIFIC STYLES */
+.typewriter-effect {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  animation: typing 3.5s steps(30, end);
+}
+
+.typewriter-effect2 {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  animation: typing 3.5s steps(30, end);
+  animation-delay: 2s;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
+
 @media (min-width: 768px) {
   .bannerHeight {
     height: 37rem;
+  }
+
+  .countdown-container {
+    top: 25%;
+    right: -30%;
   }
 }
 
@@ -123,8 +165,16 @@ hr {
 }
 
 @layer components {
-  .btn-yellow {
-    @apply bg-mm-orange text-mm-white font-bold py-2 px-4 cursor-pointer rounded-md;
+  .orange-heading {
+    @apply font-gemunu-libre text-xl font-bold mb-3 text-mm-orange uppercase;
+  }
+
+  .white-heading {
+    @apply font-gemunu-libre text-xl font-bold mb-3 text-mm-white uppercase;
+  }
+
+  .btn-live {
+    @apply bg-mm-orange text-mm-white hover:bg-mm-white hover:text-mm-orange font-semibold text-lg py-2 px-4 cursor-pointer rounded-md font-gemunu-libre;
   }
 
   .btn-live-small {
