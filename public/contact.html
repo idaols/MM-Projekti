@@ -77,22 +77,14 @@
           </div>
         </div>
       </nav>
-        <!-- <div class="infoBox w-96 m-auto mt-2 rounded ">
-            <form class="flex flex-col items-center">
-                <h2 class="">Ilmoittaudu tapahtumaan!</h2>
-                <input class="m-2 w-72 pl-2 p-1 rounded" type="text" id="name" placeholder="Nimi" required>
-                <input class="m-2 w-72 pl-2 p-1 rounded" type="email" id="email" placeholder="Sähköposti" required>
-                <textarea class="m-2 w-72 pl-2 p-1 rounded text-black" id="contact-message" rows="4">Ilmoittaudun tapahtumaan!</textarea>
-                <button type="submit" class="btn-yellow m-2">Lähetä</button>
-            </form>
-        </div> -->
 
       <div class="infoBox w-96 m-auto mt-2 rounded ">
             <!-- action="https://formsubmit.co/your@email.com method="POST"" Tähän sähköposti, kun laitettaan serverille! -->
+            
             <form class="flex flex-col items-center">
                 <h2 class="">Ota yhteyttä!</h2>
                 <!-- Tähän serverin osoite -->
-                <!-- <input type="hidden" name="_next" value="https://yourdomain.co/thanks.html"> -->
+                <input type="hidden" name="_next" value="http://localhost:3000/thanks.html">
                 <input type="hidden" name="_subject" value="Uusi yhteydenotto!">
                 <input class="m-2 w-72 pl-2 p-1 rounded" type="text" name="name"  placeholder="Nimi" required>
                 <input class="m-2 w-72 pl-2 p-1 rounded" type="email" name="email" placeholder="Sähköposti" required>
