@@ -91,40 +91,28 @@ hr {
   }
 }
 
-/* DEMO-SPECIFIC STYLES */
-.typewriter-effect {
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  animation: typing 3.5s steps(30, end);
+svg text {
+  font-family: "Gemunu Libre", sans-serif;
+  letter-spacing: 1px;
+  stroke: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  stroke-width: 1;
+  animation: textAnimate 5s infinite alternate;
+  text-transform: uppercase;
 }
 
-.typewriter-effect2 {
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  animation: typing 3.5s steps(30, end);
-  animation-delay: 2s;
-}
+@keyframes textAnimate {
+  0% {
+    stroke-dasharray: 0 50%;
+    stroke-dashoffset: 20%;
+    fill: #fe8a3b;
+  }
 
-/* The typing effect */
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-  from,
-  to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: orange;
+  100% {
+    stroke-dasharray: 50% 0;
+    stroke-dashoffstet: -20%;
+    fill: #ffffff;
   }
 }
 
@@ -135,24 +123,17 @@ hr {
 
   .countdown-container {
     top: 25%;
-    right: -30%;
+    right: 6%;
+  }
+
+  svg text {
+    font-size: 1.8rem;
   }
 }
 
-@media (min-width: 1024px) {
-  .desktopLive {
-    top: 27rem;
-    right: 5rem;
-    padding: 25px !important;
-    font-size: 1.5em !important;
-    /* box-shadow: rgba(255, 255, 255, 0.25) 0px 54px 55px,
-      rgba(255, 255, 255, 0.12) 0px -12px 30px,
-      rgba(255, 255, 255, 0.12) 0px 4px 6px,
-      rgba(255, 255, 255, 0.17) 0px 12px 13px,
-      rgba(255, 255, 255, 0.09) 0px -3px 5px; */
-    border-radius: 20px !important;
-  }
-}
+/* @media (min-width: 1024px) {
+
+} */
 
 @tailwind base;
 @tailwind components;
