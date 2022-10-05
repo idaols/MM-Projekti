@@ -1,6 +1,6 @@
 /* Change all text and icon colors in the player. */
 .vjs-ida.video-js {
-  color: #71d8f5ff;
+  color: #fed7b5ff;
   border-radius: 0.5em;
 }
 
@@ -9,17 +9,17 @@
 }
 
 .vjs-ida .vjs-play-progress:before {
-  background-color: #71d8f5ff;
+  background-color: #ffffff;
 }
 
 /* Change the border of the big play button. */
 .vjs-ida .vjs-big-play-button {
-  color: #71d8f5ff;
+  color: #fe8a3bff;
   font-size: 5em;
   border: 0.05em solid;
   border-radius: 2em;
-  background-color: rgb(247, 247, 242, 0.5);
-  border-color: #71d8f5ff;
+  background-color: rgb(247, 247, 242, 0.2);
+  border-color: #fe8a3bff;
 }
 
 .vjs-ida .vjs-poster {
@@ -31,12 +31,12 @@
 }
 
 .vjs-ida .vjs-control-bar {
-  color: #fe586fff;
+  color: #ffffff;
   border-bottom-right-radius: 0.5em;
   border-bottom-left-radius: 0.5em;
   font-size: 10px;
   height: 36px;
-  background-color: rgb(247, 247, 242, 0.5);
+  background-color: rgba(74, 74, 74, 0.7);
 }
 
 .vjs-ida .vjs-picture-in-picture-control,
@@ -52,10 +52,10 @@
 
 .vjs-ida .vjs-play-progress,
 .vjs-ida .vjs-slider-bar {
-  background: #ecf877ff;
+  background: #fe8a3bff;
 }
 
 /* Change the color of various "bars". */
 .vjs-ida .vjs-volume-level {
-  background: #71d8f5ff;
+  background: #fe8a3bff;
 }

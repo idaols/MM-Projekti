@@ -46,15 +46,16 @@ writeMsg.addEventListener("submit", (event) => {
 
 socket.on("new message", (msg, username) => {
   const item = document.createElement("li");
-  item.innerHTML = `<b> ${username}: </b>` + msg;
+  item.innerHTML = `<b style="color: #FE8A3B;">${username}: </b>` + msg;
   item.classList.add(
     "py-3",
-    "px-4",
-    "bg-mm-peachy",
+    "px-3",
+    "bg-mm-blue",
     "rounded-2xl",
-    "text-mm-black",
+    "text-mm-white",
+    "text-sm",
     "w-fit",
-    "m-3"
+    "m-2"
   );
   messages.appendChild(item);
 });

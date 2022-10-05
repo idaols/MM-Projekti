@@ -12,14 +12,19 @@
   <link href="https://unpkg.com/@videojs/themes@1/dist/fantasy/index.css" rel="stylesheet" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@300;400;700&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@300;400;700&family=Lato:wght@300;400;700;900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="video.css" />
   <title>Mahdollisuuksien maisemia</title>
 </head>
 
 <body class="bg-black h-full font-lato">
   <div class="absolute z-40 pt-1 pl-1">
-    <img class="h-20 logoDesktop" src="/img/mm-logo.svg" alt="logo" />
+    <a href="index.html">
+      <img class="h-20 logoDesktop" src="/img/mm-logo.svg" alt="logo" />
+    </a>
+
   </div>
 
   <div class="relative z-0">
@@ -66,15 +71,20 @@
 
   <div class="bg-no-repeat bg-cover bg-center">
 
-    <div class="countdown-container mt-3 justify-center items-center flex flex-col w-full md:absolute">
+    <div class="countdown-container mt-3 justify-center items-center flex flex-col md:absolute">
       <div>
-        <h1 class="text-mm-orange text-center font-bold font-gemunu-libre text-xl md:text-4xl md:mb-3" id="headline">Tapahtuman alkuun</h1>
+        <h1 class="text-mm-orange text-center font-bold font-gemunu-libre text-xl md:text-4xl md:mb-3" id="headline">
+          Tapahtuman alkuun</h1>
         <div class="text-mm-white text-center flex justify-center" id="countdown">
           <ul class="flex flex-row items-center">
-            <li class="mx-2 text-xs md:text-lg"><span class="block text-2xl mb-1 font-gemunu-libre md:text-4xl" id="days"></span>päivää</li>
-            <li class="mx-2 text-xs md:text-lg"><span class="block text-2xl mb-1 font-gemunu-libre md:text-4xl" id="hours"></span>tuntia</li>
-            <li class="mx-2 text-xs md:text-lg"><span class="block text-2xl mb-1 font-gemunu-libre md:text-4xl" id="minutes"></span>minuuttia</li>
-            <li class="mx-2 text-xs md:text-lg"><span class="block text-2xl mb-1 font-gemunu-libre md:text-4xl" id="seconds"></span>sekuntia</li>
+            <li class="mx-2 text-xs md:text-lg"><span class="block text-2xl mb-1 font-gemunu-libre md:text-4xl"
+                id="days"></span>päivää</li>
+            <li class="mx-2 text-xs md:text-lg"><span class="block text-2xl mb-1 font-gemunu-libre md:text-4xl"
+                id="hours"></span>tuntia</li>
+            <li class="mx-2 text-xs md:text-lg"><span class="block text-2xl mb-1 font-gemunu-libre md:text-4xl"
+                id="minutes"></span>minuuttia</li>
+            <li class="mx-2 text-xs md:text-lg"><span class="block text-2xl mb-1 font-gemunu-libre md:text-4xl"
+                id="seconds"></span>sekuntia</li>
           </ul>
         </div>
       </div>
@@ -86,19 +96,17 @@
 
     </div>
 
-    <div class="bg-black p-4 min-h-full flex justify-center items-center flex-col lg:flex-row lg:h-36 lg:px-10">
-      <div class="typewriter-effect">
-        <h3 class="text-lg font-semibold text-mm-white text-center lg:text-2xl">
-          Luovuus sinun työssäsi?
-        </h3>
+    <div class="bg-black w-full flex justify-center items-center flex-col lg:flex-row lg:h-36 lg:px-10">
+      <div class="w-full h-24 mx-4">
+        <svg class="w-full">
+          <text x="50%" y="25%" text-anchor="middle">
+            Luovuus sinun työssäsi?
+          </text>
+          <text x="50%" y="45%" text-anchor="middle">
+            Mitä luovuus työelämässä mahdollistaa?
+          </text>
+        </svg>
       </div>
-      <div class="typewriter-effect2">
-        <h3 class="text-lg font-semibold text-mm-white text-center lg:text-2xl">
-          Mitä luovuus työelämässä mahdollistaa?
-        </h3>
-      </div>
-
-      <!-- <div class="btn-yellow w-fit mt-3">Live stream</div> -->
     </div>
 
     <div class="mx-2 flex justify-center flex-col lg:flex-row lg:py-5 z-1">
@@ -174,7 +182,8 @@
     </div>
 
     <section class="flex justify-center flex-col md:flex-row">
-      <div class="container reveal fade-bottom mt-3 p-6 md:py-5 md:ml-3 md:mr-1.5 z-1 min-h-min bg-mm-orange/90">
+      <div
+        class="container reveal fade-bottom mt-3 p-6 md:py-5 md:ml-7 md:mr-5 z-1 min-h-min bg-mm-orange/90 md:rounded">
         <div class="flex flex-row"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
             class="w-6 h-6 fill-mm-white mr-2">
             <path
@@ -210,7 +219,8 @@
           </div>
         </div>
       </div>
-      <div class="container reveal fade-bottom mt-3 p-6 md:py-5 md:mr-3 md:ml-1.5 z-1 min-h-min bg-mm-orange/90">
+      <div
+        class="container reveal fade-bottom mt-3 p-6 md:py-5 md:mr-7 md:ml-5 z-1 min-h-min bg-mm-orange/90 md:rounded">
         <div class="flex flex-row"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
             class="w-6 h-6 fill-mm-white mr-2">
             <path fill-rule="evenodd"
@@ -249,16 +259,21 @@
       class="hidden overflow-y-auto overflow-x-hidden h-screen fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center">
       <div class="relative p-2 w-full max-w-2xl h-full md:h-auto">
         <!-- Modal content -->
-        <div class="relative bg-white rounded-lg shadow">
+        <div class="relative bg-mm-darkblue rounded-lg shadow">
           <!-- Modal header -->
-          <div class="flex justify-between items-start p-4 rounded-t border-b">
-            <h3 class="text-xl font-semibold text-mm-orange">
-              Live stream
-            </h3>
+          <div class="flex justify-between items-start p-4 rounded-t-lg border border-mm-white">
+            <div class="flex flex-row items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2 fill-mm-orange">
+                <path d="M4.5 4.5a3 3 0 00-3 3v9a3 3 0 003 3h8.25a3 3 0 003-3v-9a3 3 0 00-3-3H4.5zM19.94 18.75l-2.69-2.69V7.94l2.69-2.69c.944-.945 2.56-.276 2.56 1.06v11.38c0 1.336-1.616 2.005-2.56 1.06z" />
+              </svg>
+              <h3 class="text-2xl font-semibold text-mm-orange font-gemunu-libre">
+                Live stream
+              </h3>
+            </div>
             <button
               class="text-mm-fiery-rose bg-mm-key-lime hover:bg-mm-fiery-rose hover:text-mm-key-lime rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
               data-modal-toggle="defaultModal">
-              <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+              <svg aria-hidden="true" class="w-5 h-5" fill="white" viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd"
                   d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
@@ -268,7 +283,7 @@
             </button>
           </div>
           <!-- Modal body -->
-          <div class="pt-4">
+          <div class="pt-4 bg-mm-white rounded-b-lg">
             <div class="px-2 pb-2">
               <video id="my-video" class="video-js vjs-theme-fantasy vjs-ida">
                 <source src="img/video.mp4" type="video/mp4" />
@@ -289,9 +304,9 @@
               <div class="bg-white/95 pt-1 pb-5 px-5 border-solid rounded-md w-full max-h-72 flex justify-center">
                 <form class="w-full flex justify-center content-center flex-col" id="join">
                   <h1 class="text-xl font-bold text-mm-orange mb-1">
-                    Osallistu keskusteluun chatissa:
+                    Osallistu keskusteluun chatissa
                   </h1>
-                  <p class="mt-3 text-md">Valitse huone:</p>
+                  <p class="mt-1 text-md">Valitse huone:</p>
                   <div class="mb-3 p-2 text-sm">
                     <input type="radio" id="1" name="room" value="1" />
                     <label class="pr-3" for="1">Huone 1</label>
@@ -301,31 +316,30 @@
                     <label class="pr-3" for="3">Huone 3</label>
                   </div>
                   <div class="flex flex-wrap content-center justify-start text-sm">
-                    <input class="border border-mm-sky-blue-crayola p-2 rounded-lg w-fit focus:outline-mm-fiery-rose"
-                      type="text" id="username" placeholder="Valitse käyttäjänimi" />
+                    <input class="border border-mm-orange p-2 rounded-lg w-fit focus:outline-mm-orange" type="text"
+                      id="username" placeholder="Käyttäjänimi" />
                     <button class="btn-yellow ml-2">Liity</button>
                   </div>
                 </form>
                 <div id="roomDiv" class="w-full flex justify-center">
-                  <div class="flex flex-row justify-between">
+                  <div class="flex flex-row justify-between items-center">
                     <div class="flex-col">
-                      <h1 id="roomNumber" class="text-lg font-bold text-mm-dark-sienna"></h1>
+                      <h1 id="roomNumber" class="text-lg font-bold text-mm-orange"></h1>
                       <p class="text-sm">Aloita chattailu!</p>
                     </div>
-                    <button class="btn-yellow px-2 py-1 text-xs" id="leaveBtn">Poistu</button>
+                    <button class="btn-yellow p-2 text-xs" id="leaveBtn">Poistu</button>
                   </div>
                   <form id="msg-input" class="pt-5 pb-3">
-                    <div class="flex items-center py-2 px-3 bg-mm-fiery-rose rounded-md">
+                    <div class="flex items-center py-2 px-3 bg-mm-blue rounded-md">
                       <button type="button"
-                        class="inline-flex justify-center p-2 text-mm-key-lime rounded-full cursor-pointer hover:text-mm-fiery-rose hover:bg-mm-key-lime">
+                        class="inline-flex justify-center p-2 text-mm-white rounded-full cursor-pointer hover:text-mm-peachy">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                           <path fill-rule="evenodd"
                             d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
                             clip-rule="evenodd"></path>
                         </svg>
                       </button>
-                      <button type="button"
-                        class="p-2 text-mm-key-lime rounded-full cursor-pointer hover:text-mm-fiery-rose hover:bg-mm-key-lime">
+                      <button type="button" class="p-2 text-mm-white rounded-full cursor-pointer hover:text-mm-peachy">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                           <path fill-rule="evenodd"
                             d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-.464 5.535a1 1 0 10-1.415-1.414 3 3 0 01-4.242 0 1 1 0 00-1.415 1.414 5 5 0 007.072 0z"
@@ -336,7 +350,7 @@
                         class="block mx-4 p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:outline-mm-fiery-rose"
                         placeholder="Lähetä viesti..."></textarea>
                       <button type="submit"
-                        class="inline-flex justify-center p-2 text-mm-key-lime rounded-full cursor-pointer hover:text-mm-fiery-rose hover:bg-mm-key-lime">
+                        class="inline-flex justify-center p-2 text-mm-orange rounded-full cursor-pointer hover:text-mm-peachy">
                         <svg class="w-6 h-6 rotate-90" fill="currentColor" viewBox="0 0 20 20"
                           xmlns="http://www.w3.org/2000/svg">
                           <path
@@ -417,7 +431,7 @@
         autoplay: false,
         preload: "auto",
         fluid: true,
-        poster: "../dist/img/placeholder.jpg",
+        poster: "/img/stream-placeholder.jpg",
         aspectRatio: "16:9",
       });
     </script>
