@@ -16,6 +16,7 @@ module.exports = {
         "mm-orange": "#FE8A3Bff",
         "mm-peachy": "#FED7B5ff",
         "mm-white": "#FFFFFFff",
+        "mm-darkblue": "#1f2933ff",
       },
       backgroundImage: {
         "bg-nav": "url('/img/mm-nav.jpg')",
