@@ -262,9 +262,14 @@
         <div class="relative bg-mm-darkblue rounded-lg shadow">
           <!-- Modal header -->
           <div class="flex justify-between items-start p-4 rounded-t-lg border border-mm-white">
-            <h3 class="text-2xl font-semibold text-mm-orange font-gemunu-libre">
-              Live stream
-            </h3>
+            <div class="flex flex-row items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2 fill-mm-orange">
+                <path d="M4.5 4.5a3 3 0 00-3 3v9a3 3 0 003 3h8.25a3 3 0 003-3v-9a3 3 0 00-3-3H4.5zM19.94 18.75l-2.69-2.69V7.94l2.69-2.69c.944-.945 2.56-.276 2.56 1.06v11.38c0 1.336-1.616 2.005-2.56 1.06z" />
+              </svg>
+              <h3 class="text-2xl font-semibold text-mm-orange font-gemunu-libre">
+                Live stream
+              </h3>
+            </div>
             <button
               class="text-mm-fiery-rose bg-mm-key-lime hover:bg-mm-fiery-rose hover:text-mm-key-lime rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
               data-modal-toggle="defaultModal">
@@ -299,9 +304,9 @@
               <div class="bg-white/95 pt-1 pb-5 px-5 border-solid rounded-md w-full max-h-72 flex justify-center">
                 <form class="w-full flex justify-center content-center flex-col" id="join">
                   <h1 class="text-xl font-bold text-mm-orange mb-1">
-                    Osallistu keskusteluun chatissa:
+                    Osallistu keskusteluun chatissa
                   </h1>
-                  <p class="mt-3 text-md">Valitse huone:</p>
+                  <p class="mt-1 text-md">Valitse huone:</p>
                   <div class="mb-3 p-2 text-sm">
                     <input type="radio" id="1" name="room" value="1" />
                     <label class="pr-3" for="1">Huone 1</label>
@@ -312,7 +317,7 @@
                   </div>
                   <div class="flex flex-wrap content-center justify-start text-sm">
                     <input class="border border-mm-orange p-2 rounded-lg w-fit focus:outline-mm-orange" type="text"
-                      id="username" placeholder="Valitse käyttäjänimi" />
+                      id="username" placeholder="Käyttäjänimi" />
                     <button class="btn-yellow ml-2">Liity</button>
                   </div>
                 </form>
