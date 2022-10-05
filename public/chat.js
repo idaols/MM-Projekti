@@ -50,9 +50,9 @@ socket.on("new message", (msg, username) => {
   item.classList.add(
     "py-3",
     "px-4",
-    "bg-mm-sky-blue-crayola",
+    "bg-mm-peachy",
     "rounded-2xl",
-    "text-mm-dark-sienna",
+    "text-mm-black",
     "w-fit",
     "m-3"
   );
