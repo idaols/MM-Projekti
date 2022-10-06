@@ -11,13 +11,13 @@
         <img class="h-20" src="/img/mm-logo.svg" alt="logo" />
       </div>
   
-      <div class="relative z-0">
+      <!-- <div class="relative z-0">
         <img class="object-cover md:object-bottom w-screen bannerHeight" src="/img/mm-banner.jpg" alt="banneri" />
-      </div>
+      </div> -->
   
       <nav class="bg-transparent">
         <div
-          class="container flex flex-wrap justify-end items-center mx-auto"
+          class="container flex flex-wrap justify-end items-center mx-auto "
         >
           <button
             data-collapse-toggle="navbar-default"
@@ -61,7 +61,7 @@
               </li>
               <li>
                 <a
-                  href="#"
+                  href="ohjelma.html"
                   class="text-center block p-3 text-white hover:text-mm-orange md:p-0"
                   >Ohjelma</a
                 >
@@ -77,29 +77,40 @@
           </div>
         </div>
       </nav>
-        <!-- <div class="infoBox w-96 m-auto mt-2 rounded ">
-            <form class="flex flex-col items-center">
-                <h2 class="">Ilmoittaudu tapahtumaan!</h2>
-                <input class="m-2 w-72 pl-2 p-1 rounded" type="text" id="name" placeholder="Nimi" required>
-                <input class="m-2 w-72 pl-2 p-1 rounded" type="email" id="email" placeholder="Sähköposti" required>
-                <textarea class="m-2 w-72 pl-2 p-1 rounded text-black" id="contact-message" rows="4">Ilmoittaudun tapahtumaan!</textarea>
-                <button type="submit" class="btn-yellow m-2">Lähetä</button>
-            </form>
-        </div> -->
-
-      <div class="infoBox w-96 m-auto mt-2 rounded ">
-            <!-- action="https://formsubmit.co/your@email.com method="POST"" Tähän sähköposti, kun laitettaan serverille! -->
-            <form class="flex flex-col items-center">
-                <h2 class="">Ota yhteyttä!</h2>
-                <!-- Tähän serverin osoite -->
-                <!-- <input type="hidden" name="_next" value="https://yourdomain.co/thanks.html"> -->
-                <input type="hidden" name="_subject" value="Uusi yhteydenotto!">
-                <input class="m-2 w-72 pl-2 p-1 rounded" type="text" name="name"  placeholder="Nimi" required>
-                <input class="m-2 w-72 pl-2 p-1 rounded" type="email" name="email" placeholder="Sähköposti" required>
-                <input class="m-2 w-72 pl-2 p-1 rounded text-mm-black" type="text" name="contact-message" placeholder="Viesti" required>
-                <button type="submit" class="btn-yellow m-2">Lähetä</button>
-            </form>
+      <div class="ml-5 w-2/4 mt-40">
+        <h2 class="font-bold text-5xl text-center">Yhteystiedot</h2>
       </div>
+      <div class="flex flex-col md:flex-row lg:flex-row">
+        <div class="infoBox w-9/12 md:w-5/12 lg:w-5/12 m-auto mt-20 rounded ">
+              <div class="flex flex-col items-center">
+                <p> Tapahtuman tuottaa Metropolia Ammattikorkeakoulu, joka työllään korkeakouluna edistää 
+                  luovuuteen liittyvän tiedon ja osaamisen näkökulmia osana eri alojen tulevaisuutta.
+                  <br>
+                  <br>
+                  Ota yhteys tapahtuman tuotantotiimiin alla olevalla lomakkeella.
+                  <br>
+                  <br>
+                  Seuraa meitä myös somessa tunnisteella #mahdollisuuksienmaisemia.
+                  <br>
+                  <br>
+                  Tapahtumatuottajat: Elina Ala-Nikkola ja Johanna Niemi  </p>
+              </div>
+        </div>
+
+        <div class="infoBox w-9/12 md:w-5/12 lg:w-5/12 m-auto mt-4 md:mt-20 lg:mt-20 rounded ">
+              <!-- action="https://formsubmit.co/your@email.com method="POST"" Tähän sähköposti, kun laitettaan serverille! --> 
+              <form class="flex flex-col items-center">
+                  <h2 class="">Ota yhteyttä!</h2>
+                  <!-- Tähän serverin osoite -->
+                  <input type="hidden" name="_next" value="http://localhost:3000/thanks.html">
+                  <input type="hidden" name="_subject" value="Uusi yhteydenotto!">
+                  <input class="m-2 w-72 pl-2 p-1 rounded" type="text" name="name"  placeholder="Nimi" required>
+                  <input class="m-2 w-72 pl-2 p-1 rounded" type="email" name="email" placeholder="Sähköposti" required>
+                  <input class="m-2 w-72 pl-2 p-1 rounded text-mm-black h-24" type="text" name="contact-message" placeholder="Viesti" required>
+                  <button type="submit" class="btn-yellow m-2">Lähetä</button>
+              </form>
+        </div>
+    </div>
 
 
       <div class="bg-mm-fiery-rose p-1 h-28 flex justify-center items-center flex-col text-white">
