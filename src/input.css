@@ -1,4 +1,9 @@
 /*Omaa CSS koodia*/
+html {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
 .customhr {
   border: 0.5px solid #fed7b5;
   margin: 0.1rem 1.25rem 0.8rem 0;
@@ -122,7 +127,7 @@ svg text {
   }
 
   .countdown-container {
-    top: 25%;
+    top: 20%;
     right: 6%;
   }
 
@@ -131,9 +136,13 @@ svg text {
   }
 }
 
-/* @media (min-width: 1024px) {
-
-} */
+@media (min-width: 1500px) {
+  nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
 
 @tailwind base;
 @tailwind components;
