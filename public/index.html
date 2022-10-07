@@ -34,7 +34,7 @@
   <nav class="bg-transparent">
     <div class="container flex flex-wrap justify-end items-center mx-auto">
       <button data-collapse-toggle="navbar-default"
-        class="z-20 absolute top-4 right-3 inline-flex items-center px-4 py-2 text-sm text-mm-orange rounded-lg md:hidden hover:text-white"
+        class="navBut z-20 absolute top-4 right-3 inline-flex items-center px-4 py-2 text-sm text-mm-orange rounded-lg md:hidden hover:text-white"
         aria-controls="navbar-default" aria-expanded="false">
         <span class="sr-only">Open main menu</span>
         <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
@@ -50,7 +50,7 @@
         <ul
           class="flex flex-col content-center p-24 text-lg md:flex-row md:space-x-8 md:p-0 md:mr-10 md:font-medium md:text-sm uppercase">
           <li>
-            <a href="#" class="text-center block p-3 text-white hover:text-mm-orange md:p-0"
+            <a href="index.html" class="text-center block p-3 text-white hover:text-mm-orange md:p-0"
               aria-current="page">Etusivu</a>
           </li>
           <li>
@@ -257,7 +257,7 @@
     <!-- Main modal -->
     <div id="defaultModal" tabindex="-1" aria-hidden="true"
       class="hidden overflow-y-auto overflow-x-hidden h-screen fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center">
-      <div class="relative p-2 w-full max-w-2xl h-full md:h-auto">
+      <div class="relative p-2 w-full max-w-5xl h-full md:h-auto">
         <!-- Modal content -->
         <div class="relative bg-mm-darkblue rounded-lg shadow">
           <!-- Modal header -->
@@ -283,8 +283,8 @@
             </button>
           </div>
           <!-- Modal body -->
-          <div class="pt-4 bg-mm-white rounded-b-lg">
-            <div class="px-2 pb-2">
+          <div class="pt-4 bg-mm-white rounded-b-lg w-full flex flex-col md:flex-row md:p-5 modalBody">
+            <div class="px-2 pb-2 flex justify-center items-center w-full md:pt-3">
               <video id="my-video" class="video-js vjs-theme-fantasy vjs-ida">
                 <source src="img/video.mp4" type="video/mp4" />
                 <!-- <source
@@ -299,21 +299,21 @@
               </video>
 
             </div>
-            <div class="top-0 pb-12 px-2 flex justify-center rounded-bl-lg rounded-br-lg">
 
+            <div class="pb-12 px-2 flex justify-center items-baseline rounded-bl-lg rounded-br-lg chatBox md:pt-6">
               <div class="bg-white/95 pt-1 pb-5 px-5 border-solid rounded-md w-full max-h-72 flex justify-center">
                 <form class="w-full flex justify-center content-center flex-col" id="join">
                   <h1 class="text-xl font-bold text-mm-orange mb-1">
                     Osallistu keskusteluun chatissa
                   </h1>
                   <p class="mt-1 text-md">Valitse huone:</p>
-                  <div class="mb-3 p-2 text-sm">
+                  <div class="mb-3 p-2 text-sm flex flex-row items-center">
                     <input type="radio" id="1" name="room" value="1" />
-                    <label class="pr-3" for="1">Huone 1</label>
+                    <label class="pr-4 pl-1" for="1">Huone 1</label>
                     <input type="radio" id="2" name="room" value="2" />
-                    <label class="pr-3" for="2">Huone 2</label>
+                    <label class="pr-4 pl-1" for="2">Huone 2</label>
                     <input type="radio" id="3" name="room" value="3" />
-                    <label class="pr-3" for="3">Huone 3</label>
+                    <label class="pr-4 pl-1" for="3">Huone 3</label>
                   </div>
                   <div class="flex flex-wrap content-center justify-start text-sm">
                     <input class="border border-mm-orange p-2 rounded-lg w-fit focus:outline-mm-orange" type="text"
@@ -364,7 +364,7 @@
                       <input type="text" id="message" placeholder="kirjoita viesti..." />
                       <button type="submit">Lähetä</button>
                     </form> -->
-                  <div class="flex flex-col-reverse overflow-auto max-h-40">
+                  <div class="flex flex-col-reverse overflow-auto max-h-40 md:max-h-48">
                     <ul class="" id="messages"></ul>
                   </div>
                 </div>

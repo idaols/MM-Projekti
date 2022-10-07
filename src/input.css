@@ -1,8 +1,4 @@
 /*Omaa CSS koodia*/
-html {
-  max-width: 1500px;
-  margin: 0 auto;
-}
 
 .customhr {
   border: 0.5px solid #fed7b5;
@@ -123,24 +119,24 @@ svg text {
 
 @media (min-width: 768px) {
   .bannerHeight {
-    height: 37rem;
+    max-height: 37rem;
   }
 
   .countdown-container {
-    top: 20%;
-    right: 6%;
+    top: 23%;
+    right: 7%;
   }
 
   svg text {
     font-size: 1.8rem;
   }
-}
 
-@media (min-width: 1500px) {
-  nav {
-    position: absolute;
-    top: 0;
-    right: 0;
+  .chatBox {
+    width: 40rem;
+  }
+
+  .modalBody {
+    height: 26rem;
   }
 }
 
