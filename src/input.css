@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 /*Omaa CSS koodia*/
->>>>>>> 49fb6f3c7f434fc305a1a845604e288868cc1465
 
 .customhr {
   border: 0.5px solid #fed7b5;
@@ -134,10 +131,6 @@ svg text {
     font-size: 1.8rem;
   }
 
-<<<<<<< HEAD
-/* @media (min-width: 1024px) {
-} */
-=======
   .chatBox {
     width: 40rem;
   }
@@ -146,7 +139,6 @@ svg text {
     height: 26rem;
   }
 }
->>>>>>> 49fb6f3c7f434fc305a1a845604e288868cc1465
 
 @tailwind base;
 @tailwind components;
