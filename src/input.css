@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+/*Omaa CSS koodia*/
+>>>>>>> 49fb6f3c7f434fc305a1a845604e288868cc1465
 
 .customhr {
   border: 0.5px solid #fed7b5;
@@ -118,21 +122,31 @@ svg text {
 
 @media (min-width: 768px) {
   .bannerHeight {
-    height: 37rem;
+    max-height: 37rem;
   }
 
   .countdown-container {
-    top: 25%;
-    right: 6%;
+    top: 23%;
+    right: 7%;
   }
 
   svg text {
     font-size: 1.8rem;
   }
-}
 
+<<<<<<< HEAD
 /* @media (min-width: 1024px) {
 } */
+=======
+  .chatBox {
+    width: 40rem;
+  }
+
+  .modalBody {
+    height: 26rem;
+  }
+}
+>>>>>>> 49fb6f3c7f434fc305a1a845604e288868cc1465
 
 @tailwind base;
 @tailwind components;
@@ -158,7 +172,7 @@ svg text {
   }
 
   .btn-yellow {
-    @apply bg-mm-orange text-mm-white font-semibold text-sm px-4 cursor-pointer rounded-md;
+    @apply bg-mm-orange text-mm-white font-bold text-sm px-4 cursor-pointer rounded-md;
   }
 
   .infoBox {
