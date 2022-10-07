@@ -168,7 +168,7 @@ svg text {
   }
 
   .btn-yellow {
-    @apply bg-mm-orange text-mm-white font-semibold text-sm px-4 cursor-pointer rounded-md;
+    @apply bg-mm-orange text-mm-darkblue font-bold text-sm px-4 cursor-pointer rounded-md;
   }
 
   .infoBox {
