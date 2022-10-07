@@ -14,6 +14,7 @@ module.exports = {
         "mm-black": "#000000ff",
         "mm-blue": "#385368ff",
         "mm-orange": "#FE8A3Bff",
+        "mm-darker-orange": "#F96401ff",
         "mm-peachy": "#FED7B5ff",
         "mm-white": "#FFFFFFff",
         "mm-darkblue": "#1f2933ff",

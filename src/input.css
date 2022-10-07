@@ -160,11 +160,11 @@ svg text {
   }
 
   .btn-live {
-    @apply bg-mm-orange text-mm-white hover:bg-mm-white hover:text-mm-orange font-semibold text-lg py-2 px-4 cursor-pointer rounded-md font-gemunu-libre;
+    @apply bg-mm-darker-orange text-mm-white hover:bg-mm-white hover:text-mm-orange font-semibold text-lg py-2 px-4 cursor-pointer rounded-md font-gemunu-libre;
   }
 
   .btn-yellow {
-    @apply bg-mm-orange text-mm-white font-bold text-sm px-4 cursor-pointer rounded-md;
+    @apply bg-mm-darker-orange text-mm-white font-bold text-sm px-4 cursor-pointer rounded-md;
   }
 
   .infoBox {
