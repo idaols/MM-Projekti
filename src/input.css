@@ -65,7 +65,7 @@ hr {
 }
 
 .box span {
-  animation: bounce 0.6s ease infinite alternate;
+  animation: bounce 0.7s ease infinite alternate;
 }
 
 @keyframes bounce{
