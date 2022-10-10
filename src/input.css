@@ -10,6 +10,7 @@
   border: 0.5px solid white;
   opacity: 0.5;
   margin: 0.5rem;
+  z-index: 1;
 }
 
 .footerCustom {
