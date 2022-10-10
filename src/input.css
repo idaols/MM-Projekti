@@ -1,8 +1,4 @@
 /*Omaa CSS koodia*/
-html {
-  max-width: 1500px;
-  margin: 0 auto;
-}
 
 .customhr {
   border: 0.5px solid #fed7b5;
@@ -14,6 +10,7 @@ html {
   border: 0.5px solid white;
   opacity: 0.5;
   margin: 0.5rem;
+  z-index: 1;
 }
 
 .footerCustom {
@@ -152,24 +149,24 @@ svg text {
 
 @media (min-width: 768px) {
   .bannerHeight {
-    height: 37rem;
+    max-height: 37rem;
   }
 
   .countdown-container {
-    top: 20%;
-    right: 6%;
+    top: 23%;
+    right: 7%;
   }
 
   svg text {
     font-size: 1.8rem;
   }
-}
 
-@media (min-width: 1500px) {
-  nav {
-    position: absolute;
-    top: 0;
-    right: 0;
+  .chatBox {
+    width: 40rem;
+  }
+
+  .modalBody {
+    height: 26rem;
   }
 }
 
@@ -193,11 +190,11 @@ svg text {
   }
 
   .btn-live {
-    @apply bg-mm-orange text-mm-white hover:bg-mm-white hover:text-mm-orange font-semibold text-lg py-2 px-4 cursor-pointer rounded-md font-gemunu-libre;
+    @apply bg-mm-darker-orange text-mm-white hover:bg-mm-white hover:text-mm-orange font-semibold text-lg py-2 px-4 cursor-pointer rounded-md font-gemunu-libre;
   }
 
   .btn-yellow {
-    @apply bg-mm-orange text-mm-darkblue font-bold text-sm px-4 cursor-pointer rounded-md;
+    @apply bg-mm-darker-orange text-mm-white font-bold text-sm px-4 cursor-pointer rounded-md;
   }
 
   .infoBox {
