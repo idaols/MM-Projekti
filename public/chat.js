@@ -2,7 +2,9 @@
 
 //localhost for locl dev only
 const socket = io("http://localhost:3000");
-// const socket = io("https://stream-server-idaols.norwayeast.cloudapp.azure.com");
+// const socket = io(
+//   "https://stream-server-jennash.norwayeast.cloudapp.azure.com/"
+// );
 
 const joinForm = document.querySelector("#join");
 const roomDiv = document.querySelector("#roomDiv");
