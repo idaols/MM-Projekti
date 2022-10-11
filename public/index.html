@@ -1,103 +1,173 @@
 <!DOCTYPE html>
-<html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/socket.io/socket.io.js"></script>
+    <script defer src="chat.js"></script>
+    <link href="../dist/output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css"
+    />
+    <link href="https://vjs.zencdn.net/7.20.2/video-js.css" rel="stylesheet" />
+    <link
+      href="https://unpkg.com/@videojs/themes@1/dist/fantasy/index.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@300;400;700&family=Lato:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="video.css" />
+    <title>Mahdollisuuksien maisemia</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="/socket.io/socket.io.js"></script>
-  <script defer src="chat.js"></script>
-  <link href="../dist/output.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
-  <link href="https://vjs.zencdn.net/7.20.2/video-js.css" rel="stylesheet" />
-  <link href="https://unpkg.com/@videojs/themes@1/dist/fantasy/index.css" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@300;400;700&family=Lato:wght@300;400;700;900&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="video.css" />
-  <title>Mahdollisuuksien maisemia</title>
-</head>
-
-<body class="bg-black h-full font-lato">
-  <!-- Logo -->
-  <div class="absolute z-40 pt-1 pl-1">
-    <a href="index.html">
-      <img class="h-20 logoDesktop" src="/img/mm-logo.svg" alt="logo" />
-    </a>
-  </div>
-
-  <!-- Banneri -->
-  <div class="relative z-0">
-    <img class="object-cover md:object-bottom w-screen bannerHeight" src="/img/mm-banner-smaller.webp" alt="banneri" />
-  </div>
-
-  <!-- Navigaatio -->
-  <nav class="bg-transparent">
-    <div class="container flex flex-wrap justify-end items-center mx-auto">
-      <button data-collapse-toggle="navbar-default"
-        class="navBut z-20 absolute top-4 right-3 inline-flex items-center px-4 py-2 text-sm text-mm-orange rounded-lg md:hidden hover:text-white"
-        aria-controls="navbar-default" aria-expanded="false">
-        <span class="sr-only">Open main menu</span>
-        <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd"
-            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-            clip-rule="evenodd"></path>
-        </svg>
-      </button>
-      <div
-        class="hidden absolute top-8 right-0 bg-bg-nav bg-cover h-screen w-screen md:h-auto md:bg-none md:block md:w-auto"
-        id="navbar-default">
-        <ul
-          class="flex flex-col content-center p-24 text-lg md:flex-row md:space-x-8 md:p-0 md:mr-10 md:font-medium md:text-sm uppercase">
-          <li>
-            <a href="index.html" class="text-center block p-3 text-white hover:text-mm-orange md:p-0"
-              aria-current="page">Etusivu</a>
-          </li>
-          <li>
-            <a href="registration.html"
-              class="text-center block p-3 text-white hover:text-mm-orange md:p-0">Ilmoitautuminen</a>
-          </li>
-          <li>
-            <a href="ohjelma.html" class="text-center block p-3 text-white hover:text-mm-orange md:p-0">Ohjelma</a>
-          </li>
-          <li>
-            <a href="contact.html" class="text-center block p-3 text-white hover:text-mm-orange md:p-0">Yhteystiedot</a>
-          </li>
-        </ul>
-      </div>
+  <body class="bg-black h-full font-lato">
+    <!-- Logo -->
+    <div class="absolute z-40 pt-1 pl-1">
+      <a href="index.html">
+        <img class="h-20 logoDesktop" src="/img/mm-logo.svg" alt="logo" />
+      </a>
     </div>
-  </nav>
 
-  <div class="bg-no-repeat bg-cover bg-center">
+    <!-- Banneri -->
+    <div class="relative z-0">
+      <img
+        class="object-cover md:object-bottom w-screen bannerHeight"
+        src="/img/mm-banner-smaller.webp"
+        alt="banneri"
+      />
+    </div>
+
+    <!-- Navigaatio -->
+    <nav class="bg-transparent">
+      <div class="container flex flex-wrap justify-end items-center mx-auto">
+        <button
+          data-collapse-toggle="navbar-default"
+          class="navBut z-20 absolute top-4 right-3 inline-flex items-center px-4 py-2 text-sm text-mm-orange rounded-lg md:hidden hover:text-white"
+          aria-controls="navbar-default"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Open main menu</span>
+          <svg
+            class="w-6 h-6"
+            aria-hidden="true"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+        <div
+          class="hidden absolute top-8 right-0 bg-bg-nav bg-cover h-screen w-screen md:h-auto md:bg-none md:block md:w-auto"
+          id="navbar-default"
+        >
+          <ul
+            class="flex flex-col content-center p-24 text-lg md:flex-row md:space-x-8 md:p-0 md:mr-10 md:font-medium md:text-sm uppercase"
+          >
+            <li>
+              <a
+                href="index.html"
+                class="text-center block p-3 text-white hover:text-mm-orange md:p-0"
+                aria-current="page"
+                >Etusivu</a
+              >
+            </li>
+            <li>
+              <a
+                href="registration.html"
+                class="text-center block p-3 text-white hover:text-mm-orange md:p-0"
+                >Ilmoitautuminen</a
+              >
+            </li>
+            <li>
+              <a
+                href="ohjelma.html"
+                class="text-center block p-3 text-white hover:text-mm-orange md:p-0"
+                >Ohjelma</a
+              >
+            </li>
+            <li>
+              <a
+                href="contact.html"
+                class="text-center block p-3 text-white hover:text-mm-orange md:p-0"
+                >Yhteystiedot</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
     <!-- Laskuri -->
-    <div class="countdown-container mt-3 justify-center items-center flex flex-col md:absolute">
+    <div
+      class="countdown-container mt-3 justify-center items-center flex flex-col md:absolute"
+    >
       <div>
-        <h1 class="text-mm-orange text-center font-bold font-gemunu-libre text-xl md:text-4xl md:mb-3" id="headline">
-          Tapahtuman alkuun</h1>
-        <div class="text-mm-white text-center flex justify-center" id="countdown">
+        <h1
+          class="text-mm-orange text-center font-bold font-gemunu-libre text-xl md:text-4xl md:mb-3"
+          id="headline"
+        >
+          Tapahtuman alkuun
+        </h1>
+        <div
+          class="text-mm-white text-center flex justify-center"
+          id="countdown"
+        >
           <ul class="flex flex-row items-center">
-            <li class="mx-2 text-xs md:text-lg"><span class="block text-2xl mb-1 font-gemunu-libre md:text-4xl"
-                id="days"></span>päivää</li>
-            <li class="mx-2 text-xs md:text-lg"><span class="block text-2xl mb-1 font-gemunu-libre md:text-4xl"
-                id="hours"></span>tuntia</li>
-            <li class="mx-2 text-xs md:text-lg"><span class="block text-2xl mb-1 font-gemunu-libre md:text-4xl"
-                id="minutes"></span>minuuttia</li>
-            <li class="mx-2 text-xs md:text-lg"><span class="block text-2xl mb-1 font-gemunu-libre md:text-4xl"
-                id="seconds"></span>sekuntia</li>
+            <li class="mx-2 text-xs md:text-lg">
+              <span
+                class="block text-2xl mb-1 font-gemunu-libre md:text-4xl"
+                id="days"
+              ></span
+              >päivää
+            </li>
+            <li class="mx-2 text-xs md:text-lg">
+              <span
+                class="block text-2xl mb-1 font-gemunu-libre md:text-4xl"
+                id="hours"
+              ></span
+              >tuntia
+            </li>
+            <li class="mx-2 text-xs md:text-lg">
+              <span
+                class="block text-2xl mb-1 font-gemunu-libre md:text-4xl"
+                id="minutes"
+              ></span
+              >minuuttia
+            </li>
+            <li class="mx-2 text-xs md:text-lg">
+              <span
+                class="block text-2xl mb-1 font-gemunu-libre md:text-4xl"
+                id="seconds"
+              ></span
+              >sekuntia
+            </li>
           </ul>
         </div>
       </div>
       <div class="mt-4">
-        <button class="btn-live w-fit mb-3 uppercase" data-modal-toggle="defaultModal">
+        <button
+          class="btn-live w-fit mb-3 uppercase"
+          data-modal-toggle="defaultModal"
+        >
           Live stream
         </button>
       </div>
     </div>
 
     <!-- Slogan -->
-    <div class="bg-black w-full flex justify-center items-center flex-col lg:flex-row lg:h-36 lg:px-10">
+    <div
+      class="bg-black w-full flex justify-center items-center flex-col lg:flex-row lg:h-36 lg:px-10"
+    >
       <div class="w-full h-24 mx-4">
         <svg class="w-full">
           <text x="50%" y="25%" text-anchor="middle">
@@ -115,11 +185,17 @@
       <div class="mx-5 infoBox basis-1/3">
         <div class="flex flex-row justify-between">
           <h2 class="orange-heading">Mikä tapahtuma?</h2>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-            class="w-6 h-6 fill-mm-orange mr-2">
-            <path fill-rule="evenodd"
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="w-6 h-6 fill-mm-orange mr-2"
+          >
+            <path
+              fill-rule="evenodd"
               d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm11.378-3.917c-.89-.777-2.366-.777-3.255 0a.75.75 0 01-.988-1.129c1.454-1.272 3.776-1.272 5.23 0 1.513 1.324 1.513 3.518 0 4.842a3.75 3.75 0 01-.837.552c-.676.328-1.028.774-1.028 1.152v.75a.75.75 0 01-1.5 0v-.75c0-1.279 1.06-2.107 1.875-2.502.182-.088.351-.199.503-.331.83-.727.83-1.857 0-2.584zM12 18a.75.75 0 100-1.5.75.75 0 000 1.5z"
-              clip-rule="evenodd" />
+              clip-rule="evenodd"
+            />
           </svg>
         </div>
 
@@ -130,19 +206,24 @@
           <br />
           <br />
           Moniäänisessä tapahtumassa kuullaan sekä huippututkijoiden
-          puheenvuoroja että käydään eri alojen ammattilaisten ja
-          opiskelijoiden yhteistä keskustelua luovuuden mahdollisuuksista
-          työelämässä.
+          puheenvuoroja että käydään eri alojen ammattilaisten ja opiskelijoiden
+          yhteistä keskustelua luovuuden mahdollisuuksista työelämässä.
         </p>
       </div>
       <div class="mx-5 infoBox basis-1/3">
         <div class="flex flex-row justify-between">
           <h2 class="orange-heading">Missä ja milloin?</h2>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-            class="w-6 h-6 fill-mm-orange">
-            <path fill-rule="evenodd"
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="w-6 h-6 fill-mm-orange"
+          >
+            <path
+              fill-rule="evenodd"
               d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z"
-              clip-rule="evenodd" />
+              clip-rule="evenodd"
+            />
           </svg>
         </div>
 
@@ -150,7 +231,9 @@
           Metropolia Ammattikorkeakoulun Myllypuron kampuksella (Helsinki)
           <br />
           <br />
-          <span class="text-mm-orange">keskiviikkona 5.10.2022 klo 8.00-15.00</span>
+          <span class="text-mm-orange"
+            >keskiviikkona 5.10.2022 klo 8.00-15.00</span
+          >
           <br />
           <br />
           Tapahtuma on maksuton, mutta edellyttää sitovaa
@@ -160,17 +243,27 @@
       <div class="mx-5 infoBox basis-1/3">
         <div class="flex flex-row justify-between">
           <h2 class="orange-heading">Ohjelma ja kenelle?</h2>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="black"
-            class="w-6 h-6 fill-mm-orange">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1"
+            stroke="black"
+            class="w-6 h-6 fill-mm-orange"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z"
+            />
           </svg>
-
-
         </div>
 
         <p>
-          Tutustu tapahtuman <a class="text-mm-orange hover:text-mm-peachy" href="ohjelma.html">ohjelmaan</a>.
+          Tutustu tapahtuman
+          <a class="text-mm-orange hover:text-mm-peachy" href="ohjelma.html"
+            >ohjelmaan</a
+          >.
           <br />
           <br />
           Tapahtuma on tarkoitettu eri alojen ammateissa toimiville
@@ -186,11 +279,18 @@
     <!-- Oranssit nice to know -kortit -->
     <section class="flex justify-center flex-col md:flex-row">
       <div
-        class="basis-1/2 reveal fade-bottom mt-3 p-6 md:py-5 md:ml-7 md:mr-5 z-1 min-h-min bg-mm-orange/80 md:rounded">
-        <div class="flex flex-row"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-            class="w-6 h-6 fill-mm-white mr-2">
+        class="basis-1/2 reveal fade-bottom mt-3 p-6 md:py-5 md:ml-7 md:mr-5 z-1 min-h-min bg-mm-orange/80 md:rounded"
+      >
+        <div class="flex flex-row">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="w-6 h-6 fill-mm-white mr-2"
+          >
             <path
-              d="M11.25 5.337c0-.355-.186-.676-.401-.959a1.647 1.647 0 01-.349-1.003c0-1.036 1.007-1.875 2.25-1.875S15 2.34 15 3.375c0 .369-.128.713-.349 1.003-.215.283-.401.604-.401.959 0 .332.278.598.61.578 1.91-.114 3.79-.342 5.632-.676a.75.75 0 01.878.645 49.17 49.17 0 01.376 5.452.657.657 0 01-.66.664c-.354 0-.675-.186-.958-.401a1.647 1.647 0 00-1.003-.349c-1.035 0-1.875 1.007-1.875 2.25s.84 2.25 1.875 2.25c.369 0 .713-.128 1.003-.349.283-.215.604-.401.959-.401.31 0 .557.262.534.571a48.774 48.774 0 01-.595 4.845.75.75 0 01-.61.61c-1.82.317-3.673.533-5.555.642a.58.58 0 01-.611-.581c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.035-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959a.641.641 0 01-.658.643 49.118 49.118 0 01-4.708-.36.75.75 0 01-.645-.878c.293-1.614.504-3.257.629-4.924A.53.53 0 005.337 15c-.355 0-.676.186-.959.401-.29.221-.634.349-1.003.349-1.036 0-1.875-1.007-1.875-2.25s.84-2.25 1.875-2.25c.369 0 .713.128 1.003.349.283.215.604.401.959.401a.656.656 0 00.659-.663 47.703 47.703 0 00-.31-4.82.75.75 0 01.83-.832c1.343.155 2.703.254 4.077.294a.64.64 0 00.657-.642z" />
+              d="M11.25 5.337c0-.355-.186-.676-.401-.959a1.647 1.647 0 01-.349-1.003c0-1.036 1.007-1.875 2.25-1.875S15 2.34 15 3.375c0 .369-.128.713-.349 1.003-.215.283-.401.604-.401.959 0 .332.278.598.61.578 1.91-.114 3.79-.342 5.632-.676a.75.75 0 01.878.645 49.17 49.17 0 01.376 5.452.657.657 0 01-.66.664c-.354 0-.675-.186-.958-.401a1.647 1.647 0 00-1.003-.349c-1.035 0-1.875 1.007-1.875 2.25s.84 2.25 1.875 2.25c.369 0 .713-.128 1.003-.349.283-.215.604-.401.959-.401.31 0 .557.262.534.571a48.774 48.774 0 01-.595 4.845.75.75 0 01-.61.61c-1.82.317-3.673.533-5.555.642a.58.58 0 01-.611-.581c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.035-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959a.641.641 0 01-.658.643 49.118 49.118 0 01-4.708-.36.75.75 0 01-.645-.878c.293-1.614.504-3.257.629-4.924A.53.53 0 005.337 15c-.355 0-.676.186-.959.401-.29.221-.634.349-1.003.349-1.036 0-1.875-1.007-1.875-2.25s.84-2.25 1.875-2.25c.369 0 .713.128 1.003.349.283.215.604.401.959.401a.656.656 0 00.659-.663 47.703 47.703 0 00-.31-4.82.75.75 0 01.83-.832c1.343.155 2.703.254 4.077.294a.64.64 0 00.657-.642z"
+            />
           </svg>
           <h2 class="white-heading">Tiesitkö että...</h2>
         </div>
@@ -201,34 +301,47 @@
               … yhteys omaan luovuuteen ja ilmaisuun on ihmisen perustarve.
             </p>
             <p class="my-2">
-              … kaikilla ihmisillä on mielen vapautta ja luovaa toimintaa tarvitseva puoli.
+              … kaikilla ihmisillä on mielen vapautta ja luovaa toimintaa
+              tarvitseva puoli.
             </p>
             <p class="my-2">
-              … luovuus on käyttövoimaa uusien ratkaisujen ja näkökulmien syntymiselle.
+              … luovuus on käyttövoimaa uusien ratkaisujen ja näkökulmien
+              syntymiselle.
             </p>
             <p class="my-2">
               … yhteys omaan luovuuteen on hyvinvoinnin edellytys.
             </p>
             <p class="my-2">
-              … luova ajattelu ja mielikuvitus lisäävät resilienssiä, jota tarvitsemme epävarmuudessa ja haasteissa.
+              … luova ajattelu ja mielikuvitus lisäävät resilienssiä, jota
+              tarvitsemme epävarmuudessa ja haasteissa.
             </p>
             <p class="my-2">
-              … jokainen ihminen on ainutlaatuinen ja siksi myös reitit ja tarpeet oman luovuuden äärelle ovat
-              erilaisia. Reittejä voidaan ravita arkisella luovuudella esimerkiksi työpaikoilla.
+              … jokainen ihminen on ainutlaatuinen ja siksi myös reitit ja
+              tarpeet oman luovuuden äärelle ovat erilaisia. Reittejä voidaan
+              ravita arkisella luovuudella esimerkiksi työpaikoilla.
             </p>
             <p class="my-2">
-              … luovuuden lisäämistä omaan arkeen voi tehdä hyvinkin pienin teoin.
+              … luovuuden lisäämistä omaan arkeen voi tehdä hyvinkin pienin
+              teoin.
             </p>
           </div>
         </div>
       </div>
       <div
-        class="basis-1/2 reveal fade-bottom mt-3 p-6 md:py-5 md:mr-7 md:ml-5 z-1 min-h-min bg-mm-orange/80 md:rounded">
-        <div class="flex flex-row"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-            class="w-6 h-6 fill-mm-white mr-2">
-            <path fill-rule="evenodd"
+        class="basis-1/2 reveal fade-bottom mt-3 p-6 md:py-5 md:mr-7 md:ml-5 z-1 min-h-min bg-mm-orange/80 md:rounded"
+      >
+        <div class="flex flex-row">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="w-6 h-6 fill-mm-white mr-2"
+          >
+            <path
+              fill-rule="evenodd"
               d="M9 4.5a.75.75 0 01.721.544l.813 2.846a3.75 3.75 0 002.576 2.576l2.846.813a.75.75 0 010 1.442l-2.846.813a3.75 3.75 0 00-2.576 2.576l-.813 2.846a.75.75 0 01-1.442 0l-.813-2.846a3.75 3.75 0 00-2.576-2.576l-2.846-.813a.75.75 0 010-1.442l2.846-.813A3.75 3.75 0 007.466 7.89l.813-2.846A.75.75 0 019 4.5zM18 1.5a.75.75 0 01.728.568l.258 1.036c.236.94.97 1.674 1.91 1.91l1.036.258a.75.75 0 010 1.456l-1.036.258c-.94.236-1.674.97-1.91 1.91l-.258 1.036a.75.75 0 01-1.456 0l-.258-1.036a2.625 2.625 0 00-1.91-1.91l-1.036-.258a.75.75 0 010-1.456l1.036-.258a2.625 2.625 0 001.91-1.91l.258-1.036A.75.75 0 0118 1.5zM16.5 15a.75.75 0 01.712.513l.394 1.183c.15.447.5.799.948.948l1.183.395a.75.75 0 010 1.422l-1.183.395c-.447.15-.799.5-.948.948l-.395 1.183a.75.75 0 01-1.422 0l-.395-1.183a1.5 1.5 0 00-.948-.948l-1.183-.395a.75.75 0 010-1.422l1.183-.395c.447-.15.799-.5.948-.948l.395-1.183A.75.75 0 0116.5 15z"
-              clip-rule="evenodd" />
+              clip-rule="evenodd"
+            />
           </svg>
           <h2 class="white-heading">Mitä jos...</h2>
         </div>
@@ -236,10 +349,12 @@
         <div class="text-container">
           <div class="text-box text-mm-white">
             <p class="my-2">
-              … luovuuden mahdollisuuksia otetaan rohkeammin osaksi eri alojen käytäntöjä ja työotetta?
+              … luovuuden mahdollisuuksia otetaan rohkeammin osaksi eri alojen
+              käytäntöjä ja työotetta?
             </p>
             <p class="my-2">
-              … työn tekemisen arkeen tuodaan enemmän tilaa luovalle toiminnalle, ajattelulle ja mielikuvitukselle?
+              … työn tekemisen arkeen tuodaan enemmän tilaa luovalle
+              toiminnalle, ajattelulle ja mielikuvitukselle?
             </p>
             <h3 class="mt-4 mb-1 font-semibold text-base text-mm-white">
               Syntyy uusia ulottuvuuksia
@@ -258,41 +373,65 @@
     </section>
 
     <!-- Stream-modaali -->
-    <div id="defaultModal" tabindex="-1" aria-hidden="true"
-      class="hidden overflow-y-auto overflow-x-hidden h-screen fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center">
+    <div
+      id="defaultModal"
+      tabindex="-1"
+      aria-hidden="true"
+      class="hidden overflow-y-auto overflow-x-hidden h-screen fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center"
+    >
       <div class="relative p-2 w-full max-w-5xl h-full md:h-auto">
         <!-- Modal content -->
         <div class="relative bg-mm-darkblue rounded-lg shadow">
           <!-- Modal header -->
-          <div class="flex justify-between items-start p-4 rounded-t-lg border border-mm-white">
+          <div
+            class="flex justify-between items-start p-4 rounded-t-lg border border-mm-white"
+          >
             <div class="flex flex-row items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                class="w-5 h-5 mr-2 fill-mm-orange">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-5 h-5 mr-2 fill-mm-orange"
+              >
                 <path
-                  d="M4.5 4.5a3 3 0 00-3 3v9a3 3 0 003 3h8.25a3 3 0 003-3v-9a3 3 0 00-3-3H4.5zM19.94 18.75l-2.69-2.69V7.94l2.69-2.69c.944-.945 2.56-.276 2.56 1.06v11.38c0 1.336-1.616 2.005-2.56 1.06z" />
+                  d="M4.5 4.5a3 3 0 00-3 3v9a3 3 0 003 3h8.25a3 3 0 003-3v-9a3 3 0 00-3-3H4.5zM19.94 18.75l-2.69-2.69V7.94l2.69-2.69c.944-.945 2.56-.276 2.56 1.06v11.38c0 1.336-1.616 2.005-2.56 1.06z"
+                />
               </svg>
-              <h3 class="text-2xl font-semibold text-mm-orange font-gemunu-libre">
+              <h3
+                class="text-2xl font-semibold text-mm-orange font-gemunu-libre"
+              >
                 Live stream
               </h3>
             </div>
             <button
               class="text-mm-fiery-rose bg-mm-key-lime hover:bg-mm-fiery-rose hover:text-mm-key-lime rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
-              data-modal-toggle="defaultModal">
-              <svg aria-hidden="true" class="w-5 h-5" fill="white" viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd"
+              data-modal-toggle="defaultModal"
+            >
+              <svg
+                aria-hidden="true"
+                class="w-5 h-5"
+                fill="white"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
                   d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                  clip-rule="evenodd"></path>
+                  clip-rule="evenodd"
+                ></path>
               </svg>
               <span class="sr-only">Close modal</span>
             </button>
           </div>
           <!-- Modal body -->
-          <div class="pt-4 bg-mm-white rounded-b-lg w-full flex flex-col md:flex-row md:p-5 modalBody">
-            <div class="px-2 pb-2 flex justify-center items-center w-full md:pt-3">
+          <div
+            class="pt-4 bg-mm-white rounded-b-lg w-full flex flex-col md:flex-row md:p-5 modalBody"
+          >
+            <div
+              class="px-2 pb-2 flex justify-center items-center w-full md:pt-3"
+            >
               <video id="my-video" class="video-js vjs-theme-fantasy vjs-ida">
                 <source src="img/video.mp4" type="video/mp4" />
-
 
                 <!-- Oikea osoite striimille! -->
                 <!-- <source
@@ -302,15 +441,25 @@
                 <p class="vjs-no-js">
                   To view this video please enable JavaScript, and consider
                   upgrading to a web browser that
-                  <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                  <a
+                    href="https://videojs.com/html5-video-support/"
+                    target="_blank"
+                    >supports HTML5 video</a
+                  >
                 </p>
               </video>
-
             </div>
 
-            <div class="pb-12 px-2 flex justify-center items-baseline rounded-bl-lg rounded-br-lg chatBox md:pt-6">
-              <div class="bg-white/95 pt-1 pb-5 px-5 border-solid rounded-md w-full max-h-72 flex justify-center">
-                <form class="w-full flex justify-center content-center flex-col" id="join">
+            <div
+              class="pb-12 px-2 flex justify-center items-baseline rounded-bl-lg rounded-br-lg chatBox md:pt-6"
+            >
+              <div
+                class="bg-white/95 pt-1 pb-5 px-5 border-solid rounded-md w-full max-h-72 flex justify-center"
+              >
+                <form
+                  class="w-full flex justify-center content-center flex-col"
+                  id="join"
+                >
                   <h1 class="text-xl font-bold text-mm-orange mb-1">
                     Osallistu keskusteluun chatissa
                   </h1>
@@ -323,52 +472,95 @@
                     <input type="radio" id="3" name="room" value="3" />
                     <label class="pr-4 pl-1" for="3">Huone 3</label>
                   </div>
-                  <div class="flex flex-wrap content-center justify-start text-sm">
-                    <input class="border border-mm-orange p-2 rounded-lg w-fit focus:outline-mm-orange" type="text"
-                      id="username" placeholder="Käyttäjänimi" />
+                  <div
+                    class="flex flex-wrap content-center justify-start text-sm"
+                  >
+                    <input
+                      class="border border-mm-orange p-2 rounded-lg w-fit focus:outline-mm-orange"
+                      type="text"
+                      id="username"
+                      placeholder="Käyttäjänimi"
+                    />
                     <button class="btn-yellow ml-2">Liity</button>
                   </div>
                 </form>
                 <div id="roomDiv" class="w-full flex justify-center">
                   <div class="flex flex-row justify-between items-center">
                     <div class="flex-col">
-                      <h1 id="roomNumber" class="text-lg font-bold text-mm-orange"></h1>
+                      <h1
+                        id="roomNumber"
+                        class="text-lg font-bold text-mm-orange"
+                      ></h1>
                       <p class="text-sm">Aloita chattailu!</p>
                     </div>
-                    <button class="btn-yellow p-2 text-xs" id="leaveBtn">Poistu</button>
+                    <button class="btn-yellow p-2 text-xs" id="leaveBtn">
+                      Poistu
+                    </button>
                   </div>
                   <form id="msg-input" class="pt-5 pb-3">
-                    <div class="flex items-center py-2 px-3 bg-mm-blue rounded-md">
-                      <button type="button"
-                        class="inline-flex justify-center p-2 text-mm-white rounded-full cursor-pointer hover:text-mm-peachy">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                          <path fill-rule="evenodd"
-                            d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
-                            clip-rule="evenodd"></path>
-                        </svg>
-                      </button>
-                      <button type="button" class="p-2 text-mm-white rounded-full cursor-pointer hover:text-mm-peachy">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                          <path fill-rule="evenodd"
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-.464 5.535a1 1 0 10-1.415-1.414 3 3 0 01-4.242 0 1 1 0 00-1.415 1.414 5 5 0 007.072 0z"
-                            clip-rule="evenodd"></path>
-                        </svg>
-                      </button>
-                      <textarea id="message" rows="1"
-                        class="block mx-4 p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:outline-mm-fiery-rose"
-                        placeholder="Lähetä viesti..."></textarea>
-                      <button type="submit"
-                        class="inline-flex justify-center p-2 text-mm-orange rounded-full cursor-pointer hover:text-mm-peachy">
-                        <svg class="w-6 h-6 rotate-90" fill="currentColor" viewBox="0 0 20 20"
-                          xmlns="http://www.w3.org/2000/svg">
+                    <div
+                      class="flex items-center py-2 px-3 bg-mm-blue rounded-md"
+                    >
+                      <button
+                        type="button"
+                        class="inline-flex justify-center p-2 text-mm-white rounded-full cursor-pointer hover:text-mm-peachy"
+                      >
+                        <svg
+                          class="w-6 h-6"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
                           <path
-                            d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z">
-                          </path>
+                            fill-rule="evenodd"
+                            d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
+                            clip-rule="evenodd"
+                          ></path>
+                        </svg>
+                      </button>
+                      <button
+                        type="button"
+                        class="p-2 text-mm-white rounded-full cursor-pointer hover:text-mm-peachy"
+                      >
+                        <svg
+                          class="w-6 h-6"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-.464 5.535a1 1 0 10-1.415-1.414 3 3 0 01-4.242 0 1 1 0 00-1.415 1.414 5 5 0 007.072 0z"
+                            clip-rule="evenodd"
+                          ></path>
+                        </svg>
+                      </button>
+                      <textarea
+                        id="message"
+                        rows="1"
+                        class="block mx-4 p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:outline-mm-fiery-rose"
+                        placeholder="Lähetä viesti..."
+                      ></textarea>
+                      <button
+                        type="submit"
+                        class="inline-flex justify-center p-2 text-mm-orange rounded-full cursor-pointer hover:text-mm-peachy"
+                      >
+                        <svg
+                          class="w-6 h-6 rotate-90"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"
+                          ></path>
                         </svg>
                       </button>
                     </div>
                   </form>
-                  <div class="flex flex-col-reverse overflow-auto max-h-40 md:max-h-48">
+                  <div
+                    class="flex flex-col-reverse overflow-auto max-h-40 md:max-h-48"
+                  >
                     <ul class="" id="messages"></ul>
                   </div>
                 </div>
@@ -382,56 +574,85 @@
     <!-- Footer -->
     <hr class="footerhr mt-16" />
     <div
-      class="flex flex-col md:flex-row lg:flex-row items-center justify-between p-1 h-fit mx-20 text-white mt-12 mb-7">
+      class="flex flex-col md:flex-row lg:flex-row items-center justify-between p-1 h-fit mx-20 text-white mt-12 mb-7"
+    >
       <div>
-        <img class="h-12 mb-3" src="./img/metropolia_s_valkoinen.png" alt="Metropolia logo">
+        <img
+          class="h-12 mb-3"
+          src="./img/metropolia_s_valkoinen.png"
+          alt="Metropolia logo"
+        />
       </div>
-      <br>
+      <br />
       <p class="font-semibold text-base">Kulttuurihyvinvointi@metropolia.fi</p>
-      <br>
+      <br />
       <p class="font-semibold text-base">#mahdollisuuksienmaisemia</p>
       <div class="flex gap-2 my-3 sm:mb-4">
         <!-- Facebook -->
-        <button aria-label="facebook"
+        <button
+          aria-label="facebook"
           onclick="window.open('https://www.facebook.com/mahdollisuuksienmaisemia', '_blank')"
-          class="p-2 font-semibold text-white inline-flex items-center space-x-2 rounded">
-          <svg class="w-5 h-5 fill-current" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          class="p-2 font-semibold text-white inline-flex items-center space-x-2 rounded"
+        >
+          <svg
+            class="w-5 h-5 fill-current"
+            role="img"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
             <path
-              d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+            />
           </svg>
         </button>
         <!-- Instagram -->
-        <button aria-label="instagram"
+        <button
+          aria-label="instagram"
           onclick="window.open('https://www.instagram.com/mahdollisuuksienmaisemia/', '_blank')"
-          class="p-2 font-semibold text-white inline-flex items-center space-x-2 rounded">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-5 h-5">
+          class="p-2 font-semibold text-white inline-flex items-center space-x-2 rounded"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"
+            class="w-5 h-5"
+          >
             <!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-            <path fill="currentColor"
-              d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+            <path
+              fill="currentColor"
+              d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+            />
           </svg>
         </button>
         <!-- Twitter -->
-        <button aria-label="twitter" onclick="window.open('https://twitter.com/m_maisemia', '_blank')"
-          class="p-2 font-semibold text-white inline-flex items-center space-x-2 rounded">
-          <svg class="w-5 h-5 fill-current" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <button
+          aria-label="twitter"
+          onclick="window.open('https://twitter.com/m_maisemia', '_blank')"
+          class="p-2 font-semibold text-white inline-flex items-center space-x-2 rounded"
+        >
+          <svg
+            class="w-5 h-5 fill-current"
+            role="img"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
             <path
-              d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+              d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+            />
           </svg>
         </button>
       </div>
     </div>
 
     <div class="">
-      <p class="font-normal text-mm-orange text-sm text-center mb-2"><span>&copy;</span> Ryhmä 3: Ida, Jenna, Henna</p>
+      <p class="font-normal text-mm-orange text-sm text-center mb-2">
+        <span>&copy;</span> Ryhmä 3: Ida, Jenna, Henna
+      </p>
     </div>
     <!-- Footer end -->
-
-
 
     <script src="animation.js"></script>
     <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
     <script src="https://vjs.zencdn.net/7.20.2/video.min.js"></script>
-
 
     <script>
       let myPlayer = document.querySelector(".video-js");
@@ -448,6 +669,5 @@
         aspectRatio: "16:9",
       });
     </script>
-</body>
-
+  </body>
 </html>
