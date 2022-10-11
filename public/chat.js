@@ -69,3 +69,13 @@ socket.on("response", (msg) => {
 socket.on("leaveResponse", (msg) => {
   console.log(msg);
 });
+
+// Send chat message also by pressing enter
+writeMsg.addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    document.getElementById("sendMsg").click();
+  }
+});

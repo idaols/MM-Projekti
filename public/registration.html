@@ -64,16 +64,16 @@
             </li>
             <li>
               <a
-                href="registration.html"
+                href="ohjelma.html"
                 class="text-center block p-3 text-white hover:text-mm-orange md:p-0"
-                >Ilmoitautuminen</a
+                >Ohjelma</a
               >
             </li>
             <li>
               <a
-                href="ohjelma.html"
+                href="registration.html"
                 class="text-center block p-3 text-white hover:text-mm-orange md:p-0"
-                >Ohjelma</a
+                >Ilmoitautuminen</a
               >
             </li>
             <li>
@@ -145,7 +145,7 @@
           method="POST"
           class="flex flex-col items-center"
         >
-          <h2 class="">Ilmoittaudu tapahtumaan tästä!</h2>
+          <h2 class="orange-heading">Ilmoittaudu tapahtumaan tästä!</h2>
           <input
             type="hidden"
             name="_next"
@@ -174,7 +174,7 @@
     <!-- Footer -->
     <hr class="footerhr mt-16" />
     <div
-      class="flex flex-col md:flex-row lg:flex-row items-center justify-between p-1 h-fit mx-20 text-white mt-12 mb-7"
+      class="flex flex-col lg:flex-row items-center justify-between p-1 h-fit mx-20 text-white mt-12 mb-7"
     >
       <div>
         <img
@@ -185,9 +185,11 @@
       </div>
       <!-- <h3 class="font-bold">Metropolia Ammattikorkeakoulu </h3> -->
       <br />
-      <p class="font-semibold text-base">Kulttuurihyvinvointi@metropolia.fi</p>
+      <p class="font-semibold text-base px-2">
+        Kulttuurihyvinvointi@metropolia.fi
+      </p>
       <br />
-      <p class="font-semibold text-base">#mahdollisuuksienmaisemia</p>
+      <p class="font-semibold text-base px-2">#mahdollisuuksienmaisemia</p>
       <div class="flex gap-2 my-3 sm:mb-4">
         <!-- Facebook -->
         <button
@@ -254,21 +256,5 @@
     <script src="animation.js"></script>
     <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
     <script src="https://vjs.zencdn.net/7.20.2/video.min.js"></script>
-
-    <script>
-      let myPlayer = document.querySelector(".video-js");
-
-      console.log(myPlayer);
-
-      videojs(myPlayer, {
-        controls: true,
-        loop: true,
-        autoplay: false,
-        preload: "auto",
-        fluid: true,
-        poster: "/img/stream-placeholder.jpg",
-        aspectRatio: "16:9",
-      });
-    </script>
   </body>
 </html>

@@ -3,8 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="/socket.io/socket.io.js"></script>
-    <script defer src="chat.js"></script>
     <link href="../dist/output.css" rel="stylesheet" />
     <link
       rel="stylesheet"
@@ -72,16 +70,16 @@
             </li>
             <li>
               <a
-                href="registration.html"
+                href="ohjelma.html"
                 class="text-center block p-3 text-white hover:text-mm-orange md:p-0"
-                >Ilmoitautuminen</a
+                >Ohjelma</a
               >
             </li>
             <li>
               <a
-                href="ohjelma.html"
+                href="registration.html"
                 class="text-center block p-3 text-white hover:text-mm-orange md:p-0"
-                >Ohjelma</a
+                >Ilmoitautuminen</a
               >
             </li>
             <li>
@@ -114,7 +112,7 @@
 
     <div class="mx-5 md:mx-auto infoBox p-3 max-w-3xl">
       <div class="flex flex-row">
-        <div class="flex basis-32 justify-center items-center mr-1">
+        <div class="flex basis-32 justify-center items-center md:mr-1">
           <h1 class="font-gemunu-libre text-xl">8.00 - 8.30</h1>
         </div>
         <div class="md:ml-3 basis-3/4 my-2">
@@ -130,7 +128,7 @@
       <hr class="footerhr" />
 
       <div class="flex flex-row">
-        <div class="flex basis-32 justify-center items-center mr-1">
+        <div class="flex basis-32 justify-center items-center md:mr-1">
           <h1 class="font-gemunu-libre text-xl">8.30 - 9.00</h1>
         </div>
         <div class="md:ml-3 basis-3/4 my-2">
@@ -146,7 +144,7 @@
       <hr class="footerhr" />
 
       <div class="flex flex-row">
-        <div class="flex basis-32 justify-center items-center mr-1">
+        <div class="flex basis-32 justify-center items-center md:mr-1">
           <h1 class="font-gemunu-libre text-xl">9.00 - 10.00</h1>
         </div>
         <div class="md:ml-3 basis-3/4 my-2">
@@ -163,7 +161,7 @@
       <hr class="footerhr" />
 
       <div class="flex flex-row">
-        <div class="flex basis-32 justify-center items-center mr-1">
+        <div class="flex basis-32 justify-center items-center md:mr-1">
           <h1 class="font-gemunu-libre text-xl">10.15 - 11.15</h1>
         </div>
         <div class="md:ml-3 basis-3/4 my-2">
@@ -181,7 +179,7 @@
       <hr class="footerhr" />
 
       <div class="flex flex-row">
-        <div class="flex basis-32 justify-center items-center mr-1">
+        <div class="flex basis-32 justify-center items-center md:mr-1">
           <h1 class="font-gemunu-libre text-xl">11.30 - 12.30</h1>
         </div>
         <div class="md:ml-3 basis-3/4 my-2">
@@ -194,14 +192,16 @@
             merkityksestä arjen tukena.
             <br />
             Keynote-puheenvuoro: Musiikki, mieli, keho ja aivot – miten musiikki
-            meitä vahvistaa? Suvi Saarikallio (FT)
+            meitä vahvistaa?
+            <br />
+            Suvi Saarikallio (FT)
           </p>
         </div>
       </div>
       <hr class="footerhr" />
 
       <div class="flex flex-row">
-        <div class="flex basis-32 justify-center items-center mr-1">
+        <div class="flex basis-32 justify-center items-center md:mr-1">
           <h1 class="font-gemunu-libre text-xl">12.30 - 13.30</h1>
         </div>
         <div class="md:ml-3 basis-3/4 my-2">
@@ -214,7 +214,7 @@
       <hr class="footerhr" />
 
       <div class="flex flex-row">
-        <div class="flex basis-32 justify-center items-center mr-1">
+        <div class="flex basis-32 justify-center items-center md:mr-1">
           <h1 class="font-gemunu-libre text-xl">13.45 - 14.45</h1>
         </div>
         <div class="md:ml-3 basis-3/4 my-2">
@@ -233,7 +233,7 @@
       <hr class="footerhr" />
 
       <div class="flex flex-row">
-        <div class="flex basis-32 justify-center items-center mr-1">
+        <div class="flex basis-32 justify-center items-center md:mr-1">
           <h1 class="font-gemunu-libre text-xl">15.00</h1>
         </div>
         <div class="md:ml-3 basis-3/4 my-2">
@@ -247,7 +247,7 @@
     <!-- Footer -->
     <hr class="footerhr mt-16" />
     <div
-      class="flex flex-col md:flex-row lg:flex-row items-center justify-between p-1 h-fit mx-20 text-white mt-12 mb-7"
+      class="flex flex-col lg:flex-row items-center justify-between p-1 h-fit mx-20 text-white mt-12 mb-7"
     >
       <div>
         <img
@@ -258,9 +258,11 @@
       </div>
       <!-- <h3 class="font-bold">Metropolia Ammattikorkeakoulu </h3> -->
       <br />
-      <p class="font-semibold text-base">Kulttuurihyvinvointi@metropolia.fi</p>
+      <p class="font-semibold text-base px-2">
+        Kulttuurihyvinvointi@metropolia.fi
+      </p>
       <br />
-      <p class="font-semibold text-base">#mahdollisuuksienmaisemia</p>
+      <p class="font-semibold text-base px-2">#mahdollisuuksienmaisemia</p>
       <div class="flex gap-2 my-3 sm:mb-4">
         <!-- Facebook -->
         <button

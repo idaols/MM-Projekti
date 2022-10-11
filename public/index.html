@@ -37,7 +37,7 @@
     <div class="relative z-0">
       <img
         class="object-cover md:object-bottom w-screen bannerHeight"
-        src="/img/mm-banner-smaller.webp"
+        src="/img/mm-banner-final.webp"
         alt="banneri"
       />
     </div>
@@ -83,16 +83,16 @@
             </li>
             <li>
               <a
-                href="registration.html"
+                href="ohjelma.html"
                 class="text-center block p-3 text-white hover:text-mm-orange md:p-0"
-                >Ilmoitautuminen</a
+                >Ohjelma</a
               >
             </li>
             <li>
               <a
-                href="ohjelma.html"
+                href="registration.html"
                 class="text-center block p-3 text-white hover:text-mm-orange md:p-0"
-                >Ohjelma</a
+                >Ilmoitautuminen</a
               >
             </li>
             <li>
@@ -409,8 +409,7 @@
             >
               <svg
                 aria-hidden="true"
-                class="w-5 h-5"
-                fill="white"
+                class="w-5 h-5 fill-mm-orange hover:fill-mm-white"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -476,7 +475,7 @@
                     class="flex flex-wrap content-center justify-start text-sm"
                   >
                     <input
-                      class="border border-mm-orange p-2 rounded-lg w-fit focus:outline-mm-orange"
+                      class="inputFields p-2 rounded-lg w-fit shadow-sm"
                       type="text"
                       id="username"
                       placeholder="Käyttäjänimi"
@@ -497,53 +496,18 @@
                       Poistu
                     </button>
                   </div>
-                  <form id="msg-input" class="pt-5 pb-3">
-                    <div
-                      class="flex items-center py-2 px-3 bg-mm-blue rounded-md"
-                    >
-                      <button
-                        type="button"
-                        class="inline-flex justify-center p-2 text-mm-white rounded-full cursor-pointer hover:text-mm-peachy"
-                      >
-                        <svg
-                          class="w-6 h-6"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
-                            clip-rule="evenodd"
-                          ></path>
-                        </svg>
-                      </button>
-                      <button
-                        type="button"
-                        class="p-2 text-mm-white rounded-full cursor-pointer hover:text-mm-peachy"
-                      >
-                        <svg
-                          class="w-6 h-6"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-.464 5.535a1 1 0 10-1.415-1.414 3 3 0 01-4.242 0 1 1 0 00-1.415 1.414 5 5 0 007.072 0z"
-                            clip-rule="evenodd"
-                          ></path>
-                        </svg>
-                      </button>
+                  <form id="msg-input" class="pt-3 pb-3">
+                    <div class="flex align-bottom items-center">
                       <textarea
                         id="message"
                         rows="1"
-                        class="block mx-4 p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:outline-mm-fiery-rose"
+                        class="block p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-500 focus:outline-none focus:border-none focus:ring focus:ring-mm-orange"
                         placeholder="Lähetä viesti..."
                       ></textarea>
                       <button
+                        id="sendMsg"
                         type="submit"
-                        class="inline-flex justify-center p-2 text-mm-orange rounded-full cursor-pointer hover:text-mm-peachy"
+                        class="inline-flex justify-center p-3 text-mm-darker-orange rounded-full cursor-pointer hover:text-mm-orange"
                       >
                         <svg
                           class="w-6 h-6 rotate-90"
@@ -559,7 +523,7 @@
                     </div>
                   </form>
                   <div
-                    class="flex flex-col-reverse overflow-auto max-h-40 md:max-h-48"
+                    class="flex flex-col-reverse overflow-auto max-h-48 md:max-h-52"
                   >
                     <ul class="" id="messages"></ul>
                   </div>
@@ -574,9 +538,9 @@
     <!-- Footer -->
     <hr class="footerhr mt-16" />
     <div
-      class="flex flex-col md:flex-row lg:flex-row items-center justify-between p-1 h-fit mx-20 text-white mt-12 mb-7"
+      class="flex flex-col lg:flex-row items-center justify-between p-1 h-fit mx-20 text-white mt-12 mb-7"
     >
-      <div>
+      <div class="px-2">
         <img
           class="h-12 mb-3"
           src="./img/metropolia_s_valkoinen.png"
@@ -584,10 +548,12 @@
         />
       </div>
       <br />
-      <p class="font-semibold text-base">Kulttuurihyvinvointi@metropolia.fi</p>
+      <p class="font-semibold text-base px-2">
+        Kulttuurihyvinvointi@metropolia.fi
+      </p>
       <br />
-      <p class="font-semibold text-base">#mahdollisuuksienmaisemia</p>
-      <div class="flex gap-2 my-3 sm:mb-4">
+      <p class="font-semibold text-base px-2">#mahdollisuuksienmaisemia</p>
+      <div class="flex gap-2 px-2 my-3 sm:mb-4">
         <!-- Facebook -->
         <button
           aria-label="facebook"
@@ -651,13 +617,12 @@
     <!-- Footer end -->
 
     <script src="animation.js"></script>
+    <script src="counter.js"></script>
     <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
     <script src="https://vjs.zencdn.net/7.20.2/video.min.js"></script>
 
     <script>
       let myPlayer = document.querySelector(".video-js");
-
-      console.log(myPlayer);
 
       videojs(myPlayer, {
         controls: true,
