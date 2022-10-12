@@ -10,6 +10,7 @@
   border: 0.5px solid white;
   opacity: 0.5;
   margin: 0.5rem;
+  z-index: 1;
 }
 
 .footerCustom {
@@ -58,6 +59,31 @@ hr {
 }
 .active.fade-right {
   animation: fade-right 1s ease;
+}
+
+.box span {
+  animation: bounce 0.7s ease infinite alternate;
+}
+
+@keyframes bounce {
+  100% {
+    top: -20px;
+    text-shadow: 0 1px #1f2933ff, 0 2px #1f2933ff, 0 3px #1f2933ff,
+      0 4px #1f2933ff, 0 5px #1f2933ff, 0 6px #1f2933ff,
+      0 50px 25px rgba(0, 0, 0, 0.2);
+  }
+}
+.box span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.box span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.box span:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.box span:nth-child(5) {
+  animation-delay: 0.4s;
 }
 
 @keyframes fade-bottom {
@@ -112,7 +138,7 @@ svg text {
 
   100% {
     stroke-dasharray: 50% 0;
-    stroke-dashoffstet: -20%;
+    stroke-dashoffset: -20%;
     fill: #ffffff;
   }
 }
@@ -160,11 +186,11 @@ svg text {
   }
 
   .btn-live {
-    @apply bg-mm-orange text-mm-white hover:bg-mm-white hover:text-mm-orange font-semibold text-lg py-2 px-4 cursor-pointer rounded-md font-gemunu-libre;
+    @apply bg-mm-darker-orange text-mm-white hover:bg-mm-orange font-semibold text-lg py-2 px-4 cursor-pointer rounded-md font-gemunu-libre;
   }
 
   .btn-yellow {
-    @apply bg-mm-orange text-mm-white font-bold text-sm px-4 cursor-pointer rounded-md;
+    @apply bg-mm-darker-orange text-mm-white font-bold text-sm px-4 py-2 cursor-pointer rounded-md hover:bg-mm-orange;
   }
 
   .infoBox {

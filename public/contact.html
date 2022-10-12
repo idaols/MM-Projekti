@@ -1,9 +1,16 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="fi">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../dist/output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@300;400;700&family=Lato:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
     <title>Ota yhteyttä</title>
   </head>
   <body class="bg-black h-full font-lato">
@@ -37,7 +44,7 @@
           </svg>
         </button>
         <div
-          class="hidden absolute top-8 right-0 bg-bg-nav bg-cover h-screen w-screen md:h-auto md:bg-none md:block md:w-auto"
+          class="hidden absolute top-8 right-0 bg-bg-nav bg-cover h-screen w-screen md:h-auto md:bg-none md:block md:w-auto z-10"
           id="navbar-default"
         >
           <ul
@@ -46,29 +53,29 @@
             <li>
               <a
                 href="index.html"
-                class="text-center block p-3 text-white hover:text-mm-orange md:p-0"
+                class="text-center block p-3 text-white hover:text-mm-peachy md:p-0"
                 aria-current="page"
                 >Etusivu</a
               >
             </li>
             <li>
               <a
-                href="registration.html"
-                class="text-center block p-3 text-white hover:text-mm-orange md:p-0"
-                >Ilmoitautuminen</a
-              >
-            </li>
-            <li>
-              <a
                 href="ohjelma.html"
-                class="text-center block p-3 text-white hover:text-mm-orange md:p-0"
+                class="text-center block p-3 text-white hover:text-mm-peachy md:p-0"
                 >Ohjelma</a
               >
             </li>
             <li>
               <a
+                href="registration.html"
+                class="text-center block p-3 text-white hover:text-mm-peachy md:p-0"
+                >Ilmoitautuminen</a
+              >
+            </li>
+            <li>
+              <a
                 href="contact.html"
-                class="text-center block p-3 text-white hover:text-mm-orange md:p-0"
+                class="text-center block p-3 text-mm-orange hover:text-mm-peachy md:p-0"
                 >Yhteystiedot</a
               >
             </li>
@@ -78,14 +85,29 @@
     </nav>
 
     <div class="bg-no-repeat bg-cover bg-center">
-      <div class="w-2/4 mt-40 mb-20 ml-14 text-start">
-        <h2 class="font-gemunu-libre font-bold uppercase underline text-5xl">
-          Yhteystiedot
-        </h2>
-      </div>
+      <div
+      class="p-4 flex justify-center items-center flex-col lg:flex-row lg:h-36 lg:px-10"
+      >
+      <h3
+        class="box font-gemunu-libre text-3xl pt-24 font-semibold text-mm-orange text-center md:text-4xl lg:text-4xl mb-8"
+      >
+      <span>Y</span>
+      <span>H</span>
+      <span>T</span>
+      <span>E</span>
+      <span>Y</span>
+      <span>S</span>
+      <span>T</span>
+      <span>I</span>
+      <span>E</span>
+      <span>D</span>
+      <span>O</span>
+      <span>T</span>
+      </h3>
+    </div>
       <div class="flex flex-col md:flex-row lg:flex-row">
         <div
-          class="infoBox w-9/12 md:w-5/12 lg:w-5/12 m-auto mt-30 rounded h-96 mb-4"
+          class="infoBox w-9/12 md:w-5/12 lg:w-5/12 m-auto mt-30 rounded h-auto md:h-96 mb-4"
         >
           <div class="flex flex-col items-center">
             <p>
@@ -97,7 +119,8 @@
               Ota yhteys tapahtuman tuotantotiimiin alla olevalla lomakkeella.
               <br />
               <br />
-              Seuraa meitä myös somessa tunnisteella #mahdollisuuksienmaisemia.
+              Seuraa meitä myös somessa tunnisteella
+              <span class="text-mm-orange">#mahdollisuuksienmaisemia</span>
               <br />
               <br />
               Tapahtumatuottajat: Elina Ala-Nikkola ja Johanna Niemi
@@ -108,37 +131,41 @@
         <div
           class="infoBox w-9/12 md:w-5/12 lg:w-5/12 m-auto mb-4 md:mt-30 lg:mt-30 rounded h-96"
         >
-          <!-- action="https://formsubmit.co/your@email.com method="POST"" Tähän sähköposti, kun laitettaan serverille! -->
-          <form class="flex flex-col items-center">
+          <form action="https://formsubmit.co/jenna.hakulinen@metropolia.fi" method="POST" class="flex flex-col items-center">
             <h2 class="">Ota yhteyttä!</h2>
-            <!-- Tähän serverin osoite -->
+            <input
+              type="hidden"
+              name="_next"
+              value="https://stream-server-jennash.norwayeast.cloudapp.azure.com/thanks.html"
+            />
+          <!-- <form
+            action="https://formsubmit.co/jenna.hakulinen@metropolia.fi"
+            method="POST"
+            class="flex flex-col items-center"
+          >
+            <h2 class="orange-heading">Ota yhteyttä!</h2>
             <input
               type="hidden"
               name="_next"
               value="http://localhost:3000/thanks.html"
-            />
+            /> -->
             <input type="hidden" name="_subject" value="Uusi yhteydenotto!" />
             <input
-              class="m-2 w-72 pl-2 p-1 rounded"
+              class="m-2 w-64 md:w-72 pl-2 p-1 rounded text-mm-black"
               type="text"
               name="name"
               placeholder="Nimi"
               required
             />
             <input
-              class="m-2 w-72 pl-2 p-1 rounded"
+              class="m-2 w-64 md:w-72 pl-2 p-1 rounded text-mm-black"
               type="email"
               name="email"
               placeholder="Sähköposti"
               required
             />
-            <input
-              class="m-2 w-72 pl-2 p-1 rounded text-mm-black h-24"
-              type="text"
-              name="contact-message"
-              placeholder="Viesti"
-              required
-            />
+            <!-- tämä rivi pitää olla putkeen. Muuten placeholder ei näy -->
+            <textarea class="text-mm-black m-2 w-64 md:w-72 pl-2 p-1 rounded resize-y max-h-40" type="text" name="contact-message" placeholder="Kirjoita viesti..." required></textarea>
             <button type="submit" class="btn-yellow m-2">Lähetä</button>
           </form>
         </div>
@@ -148,7 +175,7 @@
     <!-- Footer -->
     <hr class="footerhr mt-16" />
     <div
-      class="flex flex-col md:flex-row lg:flex-row items-center justify-between p-1 h-fit mx-20 text-white mt-12 mb-7"
+      class="flex flex-col lg:flex-row items-center justify-between p-1 h-fit mx-20 text-white mt-12 mb-7"
     >
       <div>
         <img
@@ -159,9 +186,11 @@
       </div>
       <!-- <h3 class="font-bold">Metropolia Ammattikorkeakoulu </h3> -->
       <br />
-      <p class="font-semibold text-base">Kulttuurihyvinvointi@metropolia.fi</p>
+      <p class="font-semibold text-base px-2">
+        Kulttuurihyvinvointi@metropolia.fi
+      </p>
       <br />
-      <p class="font-semibold text-base">#mahdollisuuksienmaisemia</p>
+      <p class="font-semibold text-base px-2">#mahdollisuuksienmaisemia</p>
       <div class="flex gap-2 my-3 sm:mb-4">
         <!-- Facebook -->
         <button
@@ -228,21 +257,5 @@
     <script src="animation.js"></script>
     <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
     <script src="https://vjs.zencdn.net/7.20.2/video.min.js"></script>
-
-    <script>
-      let myPlayer = document.querySelector(".video-js");
-
-      console.log(myPlayer);
-
-      videojs(myPlayer, {
-        controls: true,
-        loop: true,
-        autoplay: false,
-        preload: "auto",
-        fluid: true,
-        poster: "/img/stream-placeholder.jpg",
-        aspectRatio: "16:9",
-      });
-    </script>
   </body>
 </html>

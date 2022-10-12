@@ -1,8 +1,10 @@
 "use strict";
 
 //localhost for locl dev only
-const socket = io("http://localhost:3000");
-// const socket = io("https://stream-server-idaols.norwayeast.cloudapp.azure.com");
+// const socket = io("http://localhost:3000");
+const socket = io(
+  "https://stream-server-jennash.norwayeast.cloudapp.azure.com/"
+);
 
 const joinForm = document.querySelector("#join");
 const roomDiv = document.querySelector("#roomDiv");
@@ -66,4 +68,14 @@ socket.on("response", (msg) => {
 
 socket.on("leaveResponse", (msg) => {
   console.log(msg);
+});
+
+// Send chat message also by pressing enter
+writeMsg.addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    document.getElementById("sendMsg").click();
+  }
 });
