@@ -32,7 +32,7 @@ io.on("connection", (socket) => {
         userIndex = i;
       }
     }
-    users.pop(userIndex);
+    users.splice(userIndex, 1);
     socket.emit("response", username + " left the room " + room);
     socket.leave(room);
   });

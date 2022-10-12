@@ -2,7 +2,9 @@
 
 //localhost for locl dev only
 const socket = io("http://localhost:3000");
-// const socket = io("https://stream-server-idaols.norwayeast.cloudapp.azure.com");
+// const socket = io(
+//   "https://stream-server-jennash.norwayeast.cloudapp.azure.com/"
+// );
 
 const joinForm = document.querySelector("#join");
 const roomDiv = document.querySelector("#roomDiv");
@@ -46,15 +48,16 @@ writeMsg.addEventListener("submit", (event) => {
 
 socket.on("new message", (msg, username) => {
   const item = document.createElement("li");
-  item.innerHTML = `<b> ${username}: </b>` + msg;
+  item.innerHTML = `<b style="color: #FE8A3B;">${username}: </b>` + msg;
   item.classList.add(
     "py-3",
-    "px-4",
-    "bg-mm-sky-blue-crayola",
+    "px-3",
+    "bg-mm-blue",
     "rounded-2xl",
-    "text-mm-dark-sienna",
+    "text-mm-white",
+    "text-sm",
     "w-fit",
-    "m-3"
+    "m-2"
   );
   messages.appendChild(item);
 });
@@ -65,4 +68,14 @@ socket.on("response", (msg) => {
 
 socket.on("leaveResponse", (msg) => {
   console.log(msg);
+});
+
+// Send chat message also by pressing enter
+writeMsg.addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    document.getElementById("sendMsg").click();
+  }
 });

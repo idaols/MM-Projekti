@@ -1,11 +1,8 @@
 /*Omaa CSS koodia*/
-.customhr {
-  border: 0.5px solid #71d8f5;
-  margin: 0.1rem 1.25rem 0.8rem 0;
-}
 
-.littleWave {
-  height: 50px;
+.customhr {
+  border: 0.5px solid #fed7b5;
+  margin: 0.1rem 1.25rem 0.8rem 0;
 }
 
 .footerhr {
@@ -13,13 +10,13 @@
   border: 0.5px solid white;
   opacity: 0.5;
   margin: 0.5rem;
+  z-index: 1;
 }
 
-.clipPath {
-  clip-path: polygon(0 40%, 100% 36%, 100% 100%, 0 97%);
+.footerCustom {
+  position: absolute;
+  right: 30px;
 }
-
-/*Omaa CSS*/
 
 #msg-input {
   display: none;
@@ -38,24 +35,134 @@ hr {
   margin: 0.5rem 1.25rem 0.8rem 0;
 }
 
-@media (min-width: 768px) {
-  .bannerHeight {
-    height: 29rem;
+.glowBorder {
+  box-shadow: #fe8a3b 0px 0px 14px 0px, #ffffff 0px 0px 7px -1px;
+}
+
+.reveal {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.active.fade-bottom {
+  animation: fade-bottom 1s ease;
+}
+.active.fade-left {
+  animation: fade-left 1s ease;
+}
+.active.fade-right {
+  animation: fade-right 1s ease;
+}
+
+.box span {
+  animation: bounce 0.7s ease infinite alternate;
+}
+
+@keyframes bounce {
+  100% {
+    top: -20px;
+    text-shadow: 0 1px #1f2933ff, 0 2px #1f2933ff, 0 3px #1f2933ff,
+      0 4px #1f2933ff, 0 5px #1f2933ff, 0 6px #1f2933ff,
+      0 50px 25px rgba(0, 0, 0, 0.2);
+  }
+}
+.box span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.box span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.box span:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.box span:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+@keyframes fade-bottom {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-left {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 
-@media (min-width: 1024px) {
-  .desktopLive {
-    top: 27rem;
-    right: 5rem;
-    padding: 25px !important;
-    font-size: 1.5em !important;
-    /* box-shadow: rgba(255, 255, 255, 0.25) 0px 54px 55px,
-      rgba(255, 255, 255, 0.12) 0px -12px 30px,
-      rgba(255, 255, 255, 0.12) 0px 4px 6px,
-      rgba(255, 255, 255, 0.17) 0px 12px 13px,
-      rgba(255, 255, 255, 0.09) 0px -3px 5px; */
-    border-radius: 20px !important;
+@keyframes fade-right {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+svg text {
+  font-family: "Gemunu Libre", sans-serif;
+  letter-spacing: 1px;
+  stroke: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  stroke-width: 1;
+  animation: textAnimate 4s infinite alternate;
+  text-transform: uppercase;
+}
+
+@keyframes textAnimate {
+  0% {
+    stroke-dasharray: 0 50%;
+    stroke-dashoffset: 20%;
+    fill: #fe8a3b;
+  }
+
+  100% {
+    stroke-dasharray: 50% 0;
+    stroke-dashoffset: -20%;
+    fill: #ffffff;
+  }
+}
+
+@media (min-width: 768px) {
+  .bannerHeight {
+    max-height: 37rem;
+  }
+
+  .countdown-container {
+    top: 23%;
+    right: 7%;
+  }
+
+  svg text {
+    font-size: 1.8rem;
+  }
+
+  .chatBox {
+    width: 40rem;
+  }
+
+  .modalBody {
+    height: 26rem;
   }
 }
 
@@ -65,16 +172,28 @@ hr {
 
 @layer base {
   h2 {
-    @apply text-lg font-semibold text-mm-fiery-rose;
+    @apply text-lg font-semibold text-mm-orange;
   }
 }
 
 @layer components {
+  .orange-heading {
+    @apply font-gemunu-libre text-xl font-bold mb-3 text-mm-orange uppercase;
+  }
+
+  .white-heading {
+    @apply font-gemunu-libre text-xl font-bold mb-3 text-mm-white uppercase;
+  }
+
+  .btn-live {
+    @apply bg-mm-darker-orange text-mm-white hover:bg-mm-orange font-semibold text-lg py-2 px-4 cursor-pointer rounded-md font-gemunu-libre;
+  }
+
   .btn-yellow {
-    @apply bg-mm-key-lime hover:bg-mm-fiery-rose hover:text-mm-key-lime text-mm-fiery-rose font-bold py-2 px-4 cursor-pointer rounded-md;
+    @apply bg-mm-darker-orange text-mm-white font-bold text-sm px-4 py-2 cursor-pointer rounded-md hover:bg-mm-orange;
   }
 
   .infoBox {
-    @apply m-3 p-5 bg-white/80 rounded-md;
+    @apply m-3 p-5 bg-mm-blue/50 text-mm-white rounded;
   }
 }
