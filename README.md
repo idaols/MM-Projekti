@@ -5,7 +5,7 @@
 ## Project Description
 
 This is a project for our course "Media Distribution and Data Streams". 
-Goal was to build a shadowpage with live streaming ability for an event and deploy and host it on Azure environment.
+Goal was to build a shadowpage with live streaming ability for an event and deploy and host it on Azure environment. Working and sensible UI/UX design was also a requirement.
 
 ### Team's comment
 >  This shadowpage is fully responsive and thoroughly thought to be accessible. We also used a lot of time to focus on visual look and make the page match the event.
