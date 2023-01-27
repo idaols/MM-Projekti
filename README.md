@@ -1,6 +1,5 @@
 # Shadowpage for Mahdollisuuksien maisemia- event.
 
-[Mahdollisuuksien maisemia](https://stream-server-jennash.norwayeast.cloudapp.azure.com/)
 
 ## Project Description
 
